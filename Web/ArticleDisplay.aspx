@@ -164,7 +164,7 @@
         </div>
                 <div class="content">
                     
-                    <asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="Repeater1_ItemDataBound">
+                    <asp:ListView ID="ListView1" runat="server" OnItemDataBound="ListView1_ItemDataBound">
                         <ItemTemplate>
                             <div class="pinlun" >
                                 <div class="pin"><img src="<%#Eval("headimg") %>" class="img-circle"/></div>
@@ -196,7 +196,7 @@
                                     </div>
                                 </div>
                             </asp:Panel>
-                            <asp:Repeater ID="Repeater2" runat="server">
+                            <asp:ListView ID="ListView2" runat="server">
                                 <ItemTemplate>
                                     <div class="con" style="padding-left: 93px; padding-top: 10px;">
                                         <h5><%#Eval("aftername") %> ..回复.. <%#Eval("beforename") %><a style="padding-left: 15px;"><%#Eval("ReplyContent") %></a></h5>
@@ -210,10 +210,19 @@
                                         </ul>
                                     </div>
                                 </ItemTemplate>
-                            </asp:Repeater>
+                            </asp:ListView>
                         </ItemTemplate>
-                    </asp:Repeater>
+                    </asp:ListView>
                 </div>
+                <asp:DataPager ID="DataPager1" runat="server"  PagedControlID="ListView1" PageSize="5">
+                           <Fields>
+                                    <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" 
+                                                                                ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                 <asp:NumericPagerField />
+                                     <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" 
+                                                                               ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                 </Fields>
+                        </asp:DataPager>
             </ContentTemplate>
         </asp:UpdatePanel>
        </div>

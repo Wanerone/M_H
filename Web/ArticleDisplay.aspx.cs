@@ -180,8 +180,8 @@ namespace Web
             DataTable dt = ArticleCommentManager.SelectID(nid);
             if (dt != null && dt.Rows.Count != 0)
             {
-                Repeater1.DataSource = dt;
-                Repeater1.DataBind();
+                ListView1.DataSource = dt;
+                ListView1.DataBind();
             }
         }
         //回复按钮
@@ -216,11 +216,11 @@ namespace Web
             //   }
 
         }
-        protected void Repeater1_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        protected void ListView1_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
-            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+            if (e.Item.ItemType == ListViewItemType.DataItem)
             {
-                Repeater rpt = e.Item.FindControl("Repeater2") as Repeater;//找到里层的repeate;
+                ListView rpt = e.Item.FindControl("ListView2") as ListView;//找到里层的ListView;
                 int id = Convert.ToInt32(((Label)e.Item.FindControl("Label11")).Text);
                 DataTable sdr = ArticleReplyManager.SelectID(id);
                 if (rpt != null)
