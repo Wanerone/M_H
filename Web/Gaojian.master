@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Creation.Master" AutoEventWireup="true" CodeBehind="Gaojian.master.cs" Inherits="Web.Gaojian" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <style>
+        .fab {
+            border-bottom: 2px solid #e8e8e8;
+            color: #222;
+            font-size: 16px;
+            height: 64px;
+            list-style: none;
+        }
+        .fabiao {
+            display: inline-block;
+            margin-right: 30px;
+            line-height: 52px;
+            cursor: pointer;
+        }
+        .fabiao  a{
+            text-decoration: none;
+        }
+    </style>
+    <ul class="fab">
+        <li class="fabiao"><a href="AddArticle.aspx">发表文章</a></li>
+        <li  class="fabiao"><a href="AddVideo.aspx">发表视频</a></li>
+        <li  class="fabiao"><a href="#">发表图集</a></li>
+    </ul>
+	<div >
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder11" runat="server"></asp:ContentPlaceHolder>
+	</div>
+</asp:Content>

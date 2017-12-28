@@ -1,0 +1,92 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Nav.master.cs" Inherits="Web.Nav" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+ <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link href="Mastercss.css" rel="stylesheet" />
+</head>
+<body data-spy="scroll" data-target="#myScrollspy">
+    <form id="form1" runat="server">
+        <div id="headd">
+        <nav  class="navbar navbar-fixed-top navbar-defult df-nav " role="navigation" id="navbg">
+	    <div class="container-fluid" style="background-color:hsla(0,0%,100%,.4);box-shadow: 0 1px 2px rgba(0,0,0,.1);"> 
+            <div class="navbar-header" style="padding-left:150px">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				    <span class="sr-only">Toggle navigation</span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+			    </button>
+                <a class="navbar-brand" href="#">漫话网</a>
+            </div>
+            <div >
+		    <ul class="nav navbar-nav">
+                <li ><a  class="active" href="WebF.aspx">主站</a></li>
+			    <li ><a  href="#">画漫</a></li>
+                <li ><a  href="#">线下活动</a></li>
+			    <li ><a  href="#">周边商城</a></li>
+		    </ul>
+                </div>
+           
+            <div style="padding-left:1000px;color:#140303;">
+            <ul class="nav navbar-nav " > 
+                <li> <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">                             
+                    </asp:ContentPlaceHolder></li> 
+                <li class="dropdown"> 
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
+                    投稿 <b class="caret"></b> 
+                </a> 
+                <ul class="dropdown-menu"> 
+                    <li><a href="AddArticle.aspx">发表文章</a></li> 
+                    <li class="divider"></li> 
+                    <li><a href="#">发表视频</a></li> 
+                    <li class="divider"></li> 
+                    <li><a href="#">发表图片集</a></li> 
+                </ul> 
+            </li> 
+            </ul> 
+                </div>
+	    </div>
+    </nav>
+            </div>
+            <div class="photo" style="background-image: url(/Image/daohang.jpg); width: 100%; height: 190px; text-decoration: none;"> 
+                <div class="sousuo" style="padding-left:1000px;padding-top:120px;">
+                    <div class="inlinee" style="float:left;"> <asp:TextBox ID="TextBox1" runat="server" Height="31px" Width="263px"></asp:TextBox></div>
+                      <div class="inlinee" style="float:left;"> <asp:ImageButton ID="ImageButton1" runat="server" Height="31px" ImageUrl="~/Image/tubiao.png" /> </div>
+            </div>
+                </div>
+        <div class="containerr" style="padding: 30px 170px;">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </div>
+           <div class="container" style="padding-top:50px;">
+            <div class="foote" style="float:left;">
+            <div class="footlink">
+           <a href="#">关于我们</a>
+                <span>|</span>
+                <a href="#">联系我们</a>
+                <span>|</span>
+                <a href="#">友情链接</a>
+                <span>|</span>
+                <a href="#">商城周边</a>
+                <span>|</span>
+                <a href="#">官方微博</a>
+		</div>
+           <div class="copyright">
+			<p>小组:Waner  朱繁华  黄恒恪</p>
+			<p>© 2017 本站不提供任何视听上传服务，所有内容均来自视频分享站点所提供的公开引用资源</p>
+		</div>
+                </div>
+            <div class="img" style="float:right;padding-right:200px;" >
+                <img src="Image/S71120.jpg" class="img-responsive" alt="Cinque Terre" width="100" height="100"/>
+                <span>&nbsp;关注我们</span>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

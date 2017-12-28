@@ -1,0 +1,320 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="Web.NewFolder1.Main" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+   <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link href="Mastercss.css" rel="stylesheet" />
+    <style>
+        .tuijian{
+      height:340px;
+      border:1px solid ;
+      margin-top:5px;
+      border-style:none;
+      cursor: pointer;
+      overflow: hidden;
+  }
+       .ziti{
+             width:200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+        color:#140303;
+        opacity:1.0;
+       }
+       .ziti2{
+           width:300px;
+       }
+
+        .tuijian a{
+    transition: 0.3s;
+    text-decoration:none;
+    color:#140303;
+    font-size:20px;
+        }
+       .tuitui img{
+            border-radius: 5px;
+            transition: 0.3s;
+       }
+       .tuitui img:hover{
+         opacity: 0.7;
+       }
+        .tuijian a:hover{
+            color:#00B8C0;
+        }
+   .fanju{
+      height:340px;
+      border:1px solid ;
+  }
+  .yinyue{
+      height:340px;
+      border:1px solid ;
+  }
+    .youxi{
+      height:340px;
+      border:1px solid ;
+  }
+    .xiaoshuo{
+      height:340px;
+      border:1px solid ;
+  }
+    .bantou a{
+        color:#2C2E3E;
+        height:33px;
+        text-decoration:none;
+    }
+    .bantou a:hover{
+      color:#00B8C0;
+    }
+        .tubiao{
+            float:left;
+            height:340px;
+            width:10%;
+        }
+        .tubiao tr{
+
+            height: 40px;
+        }
+        .tubiao img{
+            width:84%;
+            height:25px;
+        }
+        .paihang{
+            text-align:left!important;
+            float:left;
+            width:90%;
+            height:340px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#myNav").affix({
+                offset: { 
+                    top: 125 
+              }
+            });
+        });
+</script>
+
+</head>
+<body data-spy="scroll" data-target="#myScrollspy">
+    <form id="form1" runat="server">
+        <div id="headd">
+        <nav  class="navbar navbar-fixed-top navbar-defult df-nav " role="navigation" id="navbg">
+	    <div class="container-fluid" style="background-color:hsla(0,0%,100%,.4);box-shadow: 0 1px 2px rgba(0,0,0,.1);"> 
+            <div class="navbar-header" style="padding-left:150px">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				    <span class="sr-only">Toggle navigation</span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+			    </button>
+                <a class="navbar-brand" href="#">漫话网</a>
+            </div>
+            <div >
+		    <ul class="nav navbar-nav">
+                <li ><a  class="active" href="#">主站</a></li>
+			    <li ><a  href="#">画漫</a></li>
+                <li ><a  href="#">线下活动</a></li>
+			    <li ><a  href="#">周边商城</a></li>
+		    </ul>
+                </div>
+           
+            <div style="padding-left:1000px;color:#140303;">
+            <ul class="nav navbar-nav " > 
+                <li> <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">                             
+                    </asp:ContentPlaceHolder></li> 
+                <li class="dropdown"> 
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
+                    投稿 <b class="caret"></b> 
+                </a> 
+                <ul class="dropdown-menu"> 
+                    <li><a href="AddArticle.aspx">发表文章</a></li> 
+                    <li class="divider"></li> 
+                    <li><a href="#">发表视频</a></li> 
+                    <li class="divider"></li> 
+                    <li><a href="#">发表图片集</a></li> 
+                </ul> 
+            </li> 
+            </ul> 
+                </div>
+	    </div>
+    </nav>
+            </div>
+            <div class="photo" style="background-image: url(/Image/daohang.jpg); width: auto; height: 190px; text-decoration: none;"> 
+                <div class="sousuo" style="padding-left:1000px;padding-top:120px;">
+                    <div class="inlinee" style="float:left;"> <asp:TextBox ID="TextBox1" runat="server" Height="31px" Width="263px"></asp:TextBox></div>
+                      <div class="inlinee" style="float:left;"> <asp:ImageButton ID="ImageButton1" runat="server" Height="31px" ImageUrl="~/Image/tubiao.png" /> </div>
+            </div>
+                </div>
+    <div class="con" style="padding-left:40px;">
+   <div class="jumbotron">
+        <h1>欢迎来到二次元</h1>
+    </div>
+    <div class="row">
+        <div class="col-lg-1" id="myScrollspy">
+            <div class=" hidden-md hidden-sm">
+            <ul class="nav nav-tabs nav-stacked" id="myNav">
+                <li class="active"><a href="#section-1">推荐</a></li>
+                <li><a href="#section-2">番剧</a></li>
+                <li><a href="#section-3">音乐</a></li>
+                <li><a href="#section-4">游戏</a></li>
+                <li><a href="#section-5">小说</a></li>
+            </ul>
+                </div>
+        </div>
+        <div class="col-lg-7">
+            <div class="">
+           <div class="bantou" id="section-1"><a href="#" style="font-size:30px;">推荐</a><a href="#" style="float:right;font-size:18px;margin-top:10px;">更多<<</a></div>
+            <div class="tuijian tuitui" style="">
+                <div  ><asp:ListView ID="ListView1" runat="server" GroupItemCount="4" >
+                    <LayoutTemplate>      
+                        <table style="margin:auto;" class="img-responsive">
+                            <asp:PlaceHolder ID="groupPlaceholder" runat="server"></asp:PlaceHolder>
+                        </table>
+                    </LayoutTemplate>
+                    <GroupTemplate>
+                        <tr style="padding-top:10px;" >
+                            <asp:PlaceHolder ID="itemPlaceholder" runat="server"></asp:PlaceHolder>
+                            </tr>
+                    </GroupTemplate>
+                    <ItemTemplate>
+                        <td >
+                  <div style="height:150px;">
+                       <div style="margin: 5px;border: 1px solid #ccc; float: left; width: 200px;">
+                           <a  href="<%# "ArticleDisplay.aspx?id="+ Eval("Art_id") %>">
+                           <img  src="<%# Eval("Art_image")%>" class=" img-rounded" width="200"  height="100"/>
+                               </a></div>
+                   <div class="ziti" style="padding: 5px;text-align: center;"> <a href="<%# "ArticleDisplay.aspx?id="+ Eval("Art_id") %>"> <%#Eval("Art_title") %></a></div>
+                      </div>
+                            </td>
+                    </ItemTemplate>
+                        </asp:ListView></div>
+            </div>
+            <hr/>
+            <h2 id="section-2">番剧</h2>
+           <div class="fanju">
+              
+           </div>
+            <hr/>
+            <h2 id="section-3">音乐</h2>
+            <div class="yinyue">
+                
+            </div>
+            <hr/>
+            <h2 id="section-4">游戏</h2>
+            <div class="youxi">
+                
+            </div>
+            <hr/>
+            <h2 id="section-5">小说</h2>
+            <div class="xiaoshuo">
+                
+            </div>
+                </div>
+        </div>
+
+         <div class="col-lg-3">
+              <div class="bantou" id="ssection-1"><a  href="#" style="font-size:30px;">排行</a><a href="#" style=" text-align:center; float:right;font-size:18px;margin-top:10px;">更多<<</a></div>
+            <div class="tuijian">
+                    <div class="tubiao">
+                        <table>
+                            <tr>
+                                <td><img src="Image/数字1.png"/></td>
+                            </tr>
+                            <tr>
+                                <td><img src="Image/数字2.png" /></td>
+                            </tr>
+                            <tr>
+                                <td><img src="Image/数字3.png" /></td>
+                            </tr>
+                            <tr>
+                                <td><img src="Image/数字4.png" /></td>
+                            </tr>
+                            <tr>
+                                <td><img src="Image/数字5.png" /></td>
+                            </tr>
+                            <tr>
+                                <td><img src="Image/数字6.png" /></td>
+                            </tr>
+                            <tr>
+                                <td><img src="Image/数字7.png" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                <div class="paihang">
+                    <asp:ListView ID="ListView2" runat="server" GroupItemCount="1" >
+                    <LayoutTemplate>      
+                        <table>
+                            <asp:PlaceHolder ID="groupPlaceholder" runat="server"></asp:PlaceHolder>
+                        </table>
+                    </LayoutTemplate>
+                    <GroupTemplate>
+                        <tr  >
+                            <asp:PlaceHolder ID="itemPlaceholder" runat="server"></asp:PlaceHolder>
+                            </tr>
+                    </GroupTemplate>
+                    <ItemTemplate>
+                        <td >
+                   <div class="ziti ziti2" style="padding: 6px; text-align:left;"> <a style="font-size:20px;" > <%#Eval("Art_title") %></a>
+                      </div>
+                            </td>
+                    </ItemTemplate>
+                        </asp:ListView>
+                    </div>
+            </div>
+            <hr/>
+            <h2 id="ssection-2">排行</h2>
+            <div class="fanju">
+                <asp:ContentPlaceHolder ID="FanjuPai" runat="server"></asp:ContentPlaceHolder>
+            </div>
+            <hr/>
+            <h2 id="ssection-3">排行</h2>
+            <div class="yinyue">
+                <asp:ContentPlaceHolder ID="YinyuePai" runat="server"></asp:ContentPlaceHolder>
+            </div>            
+            <hr/>
+            <h2 id="ssection-4">排行</h2>
+            <div class="youxi">
+                <asp:ContentPlaceHolder ID="YouxiPai" runat="server"></asp:ContentPlaceHolder>
+            </div>     
+            <hr/>
+            <h2 id="ssection-5">排行</h2>
+            <div class="xiaoshuo">
+                <asp:ContentPlaceHolder ID="XiaoshuoPai" runat="server"></asp:ContentPlaceHolder>
+            </div>
+           </div>
+    </div>
+</div>
+         <div class="container" style="padding-top:50px;">
+            <div class="foote" style="float:left;">
+            <div class="footlink">
+           <a href="#">关于我们</a>
+                <span>|</span>
+                <a href="#">联系我们</a>
+                <span>|</span>
+                <a href="#">友情链接</a>
+                <span>|</span>
+                <a href="#">商城周边</a>
+                <span>|</span>
+                <a href="#">官方微博</a>
+		</div>
+           <div class="copyright">
+			<p>小组:Waner  朱繁华  黄恒恪</p>
+			<p>© 2017 本站不提供任何视听上传服务，所有内容均来自视频分享站点所提供的公开引用资源</p>
+		</div>
+                </div>
+            <div class="img" style="float:right;padding-right:200px;" >
+                <img src="Image/S71120.jpg" class="img-responsive" alt="Cinque Terre" width="100" height="100"/>
+                <span>&nbsp;关注我们</span>
+            </div>
+        </div>
+    </form>
+
+</body>
+</html>

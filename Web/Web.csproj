@@ -1,0 +1,567 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EC3AB96E-0323-4AB5-8E06-5A9AF7092B1B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web</RootNamespace>
+    <AssemblyName>Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CKEditor.NET">
+      <HintPath>E:\QQ下载\ckeditor的使用与配置\ckeditor的使用与配置\ckeditor_aspnet_3.6.6.2\bin\Release\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="CKFinder">
+      <HintPath>E:\QQ下载\ckeditor的使用与配置\ckeditor的使用与配置\ckfinder\bin\Release\CKFinder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AddArticle.aspx" />
+    <Content Include="AddVideo.aspx" />
+    <Content Include="FanjuAdd.aspx" />
+    <Content Include="FanjuZuijinMore.aspx" />
+    <Content Include="Image\1px.png" />
+    <Content Include="Image\shengdan.jpg" />
+    <Content Include="AnimeImage\xiaomai.jpg" />
+    <Content Include="ArticleDisplay.aspx" />
+    <Content Include="bootstrap-3.3.7-dist\css\bootstrap-theme.css" />
+    <Content Include="bootstrap-3.3.7-dist\css\bootstrap-theme.min.css" />
+    <Content Include="bootstrap-3.3.7-dist\css\bootstrap.css" />
+    <Content Include="bootstrap-3.3.7-dist\css\bootstrap.min.css" />
+    <Content Include="bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="bootstrap-3.3.7-dist\js\bootstrap.js" />
+    <Content Include="bootstrap-3.3.7-dist\js\bootstrap.min.js" />
+    <Content Include="bootstrap-3.3.7-dist\js\npm.js" />
+    <Content Include="CheckCode.aspx" />
+    <Content Include="CreationArt.aspx" />
+    <Content Include="css\layout.css" />
+    <Content Include="Fanju.aspx" />
+    <Content Include="FanjuDisplay.aspx" />
+    <Content Include="GeRenZhuYe.aspx" />
+    <Content Include="Image\111.jpg" />
+    <Content Include="Image\1111.jpg" />
+    <Content Include="Image\1183445.png" />
+    <Content Include="Image\2.jpg" />
+    <Content Include="Image\22.jpg" />
+    <Content Include="Image\3.jpg" />
+    <Content Include="Image\33.jpg" />
+    <Content Include="Image\33333.jpg" />
+    <Content Include="Image\4.jpg" />
+    <Content Include="Image\48-151023162303.jpg" />
+    <Content Include="Image\calendar.gif" />
+    <Content Include="Image\daohang.jpg" />
+    <Content Include="Image\f558f434e380be5d2ed08974c3e84ae9_klematis_small.jpg" />
+    <Content Include="Image\fff.jpg" />
+    <Content Include="Image\nongyu.jpg" />
+    <Content Include="Image\one.jpg" />
+    <Content Include="Image\qwe.jpg" />
+    <Content Include="Image\S71120.jpg" />
+    <Content Include="Image\tubiao.png" />
+    <Content Include="Image\小埋.jpg" />
+    <Content Include="Image\数字1.png" />
+    <Content Include="Image\数字2.png" />
+    <Content Include="Image\数字3.png" />
+    <Content Include="Image\数字4.png" />
+    <Content Include="Image\数字5.png" />
+    <Content Include="Image\数字6.png" />
+    <Content Include="Image\数字7.png" />
+    <Content Include="Image\数字8.png" />
+    <Content Include="Image\数字9.png" />
+    <Content Include="InfoSet.aspx" />
+    <Content Include="js\diqu.js" />
+    <Content Include="js\index.js" />
+    <Content Include="js\layout.js" />
+    <Content Include="js\LocalStore.js" />
+    <Content Include="js\selectAddress2.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="LoginCss.css" />
+    <Content Include="Loginzhuye.aspx" />
+    <Content Include="Mastercss.css" />
+    <Content Include="MyHeadimg.aspx" />
+    <Content Include="PlayVideo.aspx" />
+    <Content Include="Register1.aspx" />
+    <Content Include="RegisterSucess.aspx" />
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="StyleSheet1.css" />
+    <Content Include="Tubiao\喜欢1.png" />
+    <Content Include="Tubiao\喜欢.png" />
+    <Content Include="Tubiao\收藏.png" />
+    <Content Include="Tubiao\收藏1.png" />
+    <Content Include="VideoDisplay.aspx" />
+    <Content Include="WebF.aspx" />
+    <Content Include="bootstrap-3.3.7-dist\css\bootstrap-theme.css.map" />
+    <Content Include="bootstrap-3.3.7-dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="bootstrap-3.3.7-dist\css\bootstrap.css.map" />
+    <Content Include="bootstrap-3.3.7-dist\css\bootstrap.min.css.map" />
+    <Content Include="bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Main.Master" />
+    <Content Include="WebForm1.aspx" />
+    <Content Include="WebForm2.aspx" />
+    <Content Include="WebForm3.aspx" />
+    <Content Include="WebForm4.aspx" />
+    <Content Include="WebForm5.aspx" />
+    <Content Include="WebForm6.aspx" />
+    <Content Include="WebForm7.aspx" />
+    <Content Include="WebT.aspx" />
+    <Content Include="Creation.Master" />
+    <Content Include="LoginRegister.Master" />
+    <Content Include="Gaojian.master" />
+    <Content Include="Nav.Master" />
+    <None Include="scripts\jquery-3.2.1.intellisense.js" />
+    <Content Include="scripts\jquery-3.2.1.js" />
+    <Content Include="scripts\jquery-3.2.1.min.js" />
+    <Content Include="scripts\jquery-3.2.1.slim.js" />
+    <Content Include="scripts\jquery-3.2.1.slim.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="UserCenter.master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="Wodegaojian.aspx" />
+    <Content Include="Zhuye.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddArticle.aspx.cs">
+      <DependentUpon>AddArticle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddArticle.aspx.designer.cs">
+      <DependentUpon>AddArticle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddVideo.aspx.cs">
+      <DependentUpon>AddVideo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddVideo.aspx.designer.cs">
+      <DependentUpon>AddVideo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ArticleDisplay.aspx.cs">
+      <DependentUpon>ArticleDisplay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArticleDisplay.aspx.designer.cs">
+      <DependentUpon>ArticleDisplay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckCode.aspx.cs">
+      <DependentUpon>CheckCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckCode.aspx.designer.cs">
+      <DependentUpon>CheckCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Creation.Master.cs">
+      <DependentUpon>Creation.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creation.Master.designer.cs">
+      <DependentUpon>Creation.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CreationArt.aspx.cs">
+      <DependentUpon>CreationArt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreationArt.aspx.designer.cs">
+      <DependentUpon>CreationArt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fanju.aspx.cs">
+      <DependentUpon>Fanju.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Fanju.aspx.designer.cs">
+      <DependentUpon>Fanju.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FanjuAdd.aspx.cs">
+      <DependentUpon>FanjuAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FanjuAdd.aspx.designer.cs">
+      <DependentUpon>FanjuAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FanjuDisplay.aspx.cs">
+      <DependentUpon>FanjuDisplay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FanjuDisplay.aspx.designer.cs">
+      <DependentUpon>FanjuDisplay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FanjuZuijinMore.aspx.cs">
+      <DependentUpon>FanjuZuijinMore.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FanjuZuijinMore.aspx.designer.cs">
+      <DependentUpon>FanjuZuijinMore.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gaojian.master.cs">
+      <DependentUpon>Gaojian.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gaojian.master.designer.cs">
+      <DependentUpon>Gaojian.master</DependentUpon>
+    </Compile>
+    <Compile Include="GeRenZhuYe.aspx.cs">
+      <DependentUpon>GeRenZhuYe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GeRenZhuYe.aspx.designer.cs">
+      <DependentUpon>GeRenZhuYe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InfoSet.aspx.cs">
+      <DependentUpon>InfoSet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InfoSet.aspx.designer.cs">
+      <DependentUpon>InfoSet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginRegister.Master.cs">
+      <DependentUpon>LoginRegister.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginRegister.Master.designer.cs">
+      <DependentUpon>LoginRegister.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Loginzhuye.aspx.cs">
+      <DependentUpon>Loginzhuye.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Loginzhuye.aspx.designer.cs">
+      <DependentUpon>Loginzhuye.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MyHeadimg.aspx.cs">
+      <DependentUpon>MyHeadimg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyHeadimg.aspx.designer.cs">
+      <DependentUpon>MyHeadimg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nav.Master.cs">
+      <DependentUpon>Nav.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nav.Master.designer.cs">
+      <DependentUpon>Nav.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PlayVideo.aspx.cs">
+      <DependentUpon>PlayVideo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PlayVideo.aspx.designer.cs">
+      <DependentUpon>PlayVideo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register1.aspx.cs">
+      <DependentUpon>Register1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register1.aspx.designer.cs">
+      <DependentUpon>Register1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterSucess.aspx.cs">
+      <DependentUpon>RegisterSucess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterSucess.aspx.designer.cs">
+      <DependentUpon>RegisterSucess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter.master.cs">
+      <DependentUpon>UserCenter.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter.master.designer.cs">
+      <DependentUpon>UserCenter.master</DependentUpon>
+    </Compile>
+    <Compile Include="VideoDisplay.aspx.cs">
+      <DependentUpon>VideoDisplay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VideoDisplay.aspx.designer.cs">
+      <DependentUpon>VideoDisplay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebF.aspx.cs">
+      <DependentUpon>WebF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebF.aspx.designer.cs">
+      <DependentUpon>WebF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm3.aspx.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm3.aspx.designer.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm4.aspx.cs">
+      <DependentUpon>WebForm4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm4.aspx.designer.cs">
+      <DependentUpon>WebForm4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm5.aspx.cs">
+      <DependentUpon>WebForm5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm5.aspx.designer.cs">
+      <DependentUpon>WebForm5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm6.aspx.cs">
+      <DependentUpon>WebForm6.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm6.aspx.designer.cs">
+      <DependentUpon>WebForm6.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm7.aspx.cs">
+      <DependentUpon>WebForm7.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm7.aspx.designer.cs">
+      <DependentUpon>WebForm7.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebT.aspx.cs">
+      <DependentUpon>WebT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebT.aspx.designer.cs">
+      <DependentUpon>WebT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wodegaojian.aspx.cs">
+      <DependentUpon>Wodegaojian.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wodegaojian.aspx.designer.cs">
+      <DependentUpon>Wodegaojian.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Zhuye.Master.cs">
+      <DependentUpon>Zhuye.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Zhuye.Master.designer.cs">
+      <DependentUpon>Zhuye.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="scripts\jquery-3.2.1.slim.min.map" />
+    <Content Include="scripts\jquery-3.2.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="angular\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="ckeditor\" />
+    <Folder Include="ckfinder\" />
+    <Folder Include="fonts\" />
+    <Folder Include="VideoImg\" />
+    <Folder Include="Video\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{04e96685-20b9-4927-aaf0-62ced78b132a}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{83d9e1cc-f084-4279-b494-2fab86f46dd2}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{9a5f2e81-91a1-4f6f-8a76-0c764581095f}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4229</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:4060/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

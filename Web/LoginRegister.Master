@@ -1,0 +1,84 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LoginRegister.master.cs" Inherits="Web.LoginRegister" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"/>
+    <title></title>
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link href="LoginCss.css" rel="stylesheet" />
+    <style>
+        #headd a{
+            color:#140303!important;
+        }
+    </style>
+</head>
+<body >
+    <form id="form1" runat="server">
+          <div id="headd" style="color:#222;">
+        <nav  class="navbar navbar-fixed-top navbar-defult df-nav " role="navigation" style="background-color:#A0DBDB!important;">
+	    <div class="container-fluid" style="background-color:hsla(0,0%,100%,.4);box-shadow: 0 1px 2px rgba(0,0,0,.1);"> 
+            <div class="navbar-header" style="padding-left:150px">
+                &nbsp;
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				    <span class="sr-only">Toggle navigation</span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+			    </button>
+                <a class="navbar-brand" href="#">漫话网</a>
+            </div>
+            <div >
+		    <ul class="nav navbar-nav">
+                <li ><a  class="active" href="#">主站</a></li>
+			    <li ><a  href="#">画漫</a></li>
+                <li ><a  href="#">线下活动</a></li>
+			    <li ><a  href="#">周边商城</a></li>
+		    </ul>
+                </div>
+            <div style="padding-right:150px">
+            <ul class="nav navbar-nav navbar-right" > 
+                <li><a href="Register1.aspx"><span class="glyphicon glyphicon-user"></span> 注册</a></li> 
+                <li><a href="Login.aspx"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li> 
+            </ul> 
+                </div>
+	    </div>
+    </nav>
+            <div class="photo" style="background-image: url(/Image/daohang.jpg); width: 100%; height: 190px; text-decoration: none;"> 
+        </div>
+            </div>
+        <div class="container">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </div>
+        <div class="container" style="padding-top:100px;">
+            <div class="foote" style="float:left;">
+            <div class="footlink">
+           <a href="#">关于我们</a>
+                <span>|</span>
+                <a href="#">联系我们</a>
+                <span>|</span>
+                <a href="#">友情链接</a>
+                <span>|</span>
+                <a href="#">商城周边</a>
+                <span>|</span>
+                <a href="#">官方微博</a>
+		</div>
+           <div class="copyright">
+			<p>小组</p>
+			<p>© 2017 本站不提供任何视听上传服务，所有内容均来自视频分享站点所提供的公开引用资源</p>
+		</div>
+                </div>
+            <div class="img" style="float:right;padding-right:200px;" >
+                <img src="Image/S71120.jpg" class="img-responsive" alt="Cinque Terre" width="100" height="100"/>
+                <span>&nbsp;关注我们</span>
+            </div>
+        </div>
+        <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    </form>
+</body>
+</html>
