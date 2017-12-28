@@ -9,7 +9,7 @@
         }
         .ulstyle{
             padding-left:5px;
-        }
+        } 
         .title{
             margin:10px 0;
         }
