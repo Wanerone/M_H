@@ -38,7 +38,11 @@ namespace DAL
             string sql = "select  * from Anime order by addtime desc";
             return SQLHelper.GetFillData(sql);
         }
-
+        public DataTable Selectall()
+        {
+            string sql = "select  a.*,b.* from Anime a,AnimeStatic b where a.anime_ID=b.anime_ID order by addtime desc";
+            return SQLHelper.GetFillData(sql);
+        }
         public DataTable SelectAll(string email)
         {
             string sql = "select  * from Anime where email=@email order by addtime desc";
@@ -70,16 +74,31 @@ namespace DAL
 
             return SQLHelper.GetFillData(sql);
         }
+        public DataTable SelectGuochanAll()
+        {
+            string sql = "select a.*,b.* from Anime a,AnimeStatic b where location='中国' and a.anime_ID=b.anime_ID order by addtime desc ";
+            return SQLHelper.GetFillData(sql);
+        }
         public DataTable SelectTopRiman(int top)
         {
             string sql = "select  top " + top + " * from Anime  where location='日本' order by addtime desc";
 
             return SQLHelper.GetFillData(sql);
         }
+        public DataTable SelectRimanAll()
+        {
+            string sql = "select a.*,b.* from Anime a,AnimeStatic b where location='日本' and a.anime_ID=b.anime_ID order by addtime desc ";
+            return SQLHelper.GetFillData(sql);
+        }
         public DataTable SelectTopJuchang(int top)
         {
             string sql = "select  top " + top + " * from Anime  where location like '%剧场版' order by addtime desc";
 
+            return SQLHelper.GetFillData(sql);
+        }
+        public DataTable SelectJuchangAll()
+        {
+            string sql = "select a.*,b.* from Anime a,AnimeStatic b where location='%剧场版' and a.anime_ID=b.anime_ID order by addtime desc ";
             return SQLHelper.GetFillData(sql);
         }
     }

@@ -236,7 +236,7 @@
                     </GroupTemplate>
                     <ItemTemplate>
                         <td >
-                   <div class="ziti ziti2" style="padding: 6px; text-align:left;"> <a style="font-size:20px;" > <%#Eval("Art_title") %></a>
+                   <div class="ziti ziti2" style="padding: 6px; text-align:left;"> <a style="font-size:20px;" > <%#Eval("anime_Name") %></a>
                       </div>
                             </td>
                     </ItemTemplate>

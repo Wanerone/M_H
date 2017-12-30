@@ -44,10 +44,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CKEditor.NET">
-      <HintPath>E:\QQ下载\ckeditor的使用与配置\ckeditor的使用与配置\ckeditor_aspnet_3.6.6.2\bin\Release\CKEditor.NET.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\ckeditor_aspnet_3.6.6.2\bin\Debug\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="CKFinder">
-      <HintPath>E:\QQ下载\ckeditor的使用与配置\ckeditor的使用与配置\ckfinder\bin\Release\CKFinder.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\ckfinder\bin\Debug\CKFinder.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
@@ -139,6 +139,9 @@
     <Content Include="AddArticle.aspx" />
     <Content Include="AddVideo.aspx" />
     <Content Include="FanjuAdd.aspx" />
+    <Content Include="FanjuGuochanMore.aspx" />
+    <Content Include="FanjuJuchangMore.aspx" />
+    <Content Include="FanjuRimanMore.aspx" />
     <Content Include="FanjuZuijinMore.aspx" />
     <Content Include="Image\1px.png" />
     <Content Include="Image\shengdan.jpg" />
@@ -208,6 +211,9 @@
     <Content Include="Tubiao\喜欢.png" />
     <Content Include="Tubiao\收藏.png" />
     <Content Include="Tubiao\收藏1.png" />
+    <Content Include="Tubiao\收藏2 .png" />
+    <Content Include="Tubiao\标签.png" />
+    <Content Include="Tubiao\观看1.png" />
     <Content Include="VideoDisplay.aspx" />
     <Content Include="WebF.aspx" />
     <Content Include="bootstrap-3.3.7-dist\css\bootstrap-theme.css.map" />
@@ -311,6 +317,27 @@
     </Compile>
     <Compile Include="FanjuDisplay.aspx.designer.cs">
       <DependentUpon>FanjuDisplay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FanjuGuochanMore.aspx.cs">
+      <DependentUpon>FanjuGuochanMore.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FanjuGuochanMore.aspx.designer.cs">
+      <DependentUpon>FanjuGuochanMore.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FanjuJuchangMore.aspx.cs">
+      <DependentUpon>FanjuJuchangMore.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FanjuJuchangMore.aspx.designer.cs">
+      <DependentUpon>FanjuJuchangMore.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FanjuRimanMore.aspx.cs">
+      <DependentUpon>FanjuRimanMore.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FanjuRimanMore.aspx.designer.cs">
+      <DependentUpon>FanjuRimanMore.aspx</DependentUpon>
     </Compile>
     <Compile Include="FanjuZuijinMore.aspx.cs">
       <DependentUpon>FanjuZuijinMore.aspx</DependentUpon>

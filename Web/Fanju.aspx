@@ -112,12 +112,7 @@
             width:100%;
             margin:0 auto;
         }
-        @media (min-width: 1500px) and (max-width: 1200px) 
-        {
-            .col-lg-4 {
-               
-            }
-        }
+       
              </style>
    <div id="myCarousel" class="carousel slide" >
     <!-- 轮播（Carousel）指标 -->
@@ -149,7 +144,7 @@
 </div>
     <div class="conten">
         <div class="col-lg-8">
-           <div class="bantou" id="section-1"><a href="#" style="font-size:30px;">最近更新</a><a href="#" style="float:right;font-size:18px;margin-top:10px;">更多<<</a></div>
+           <div class="bantou" id="section-1"><a href="#" style="font-size:30px;">最近更新</a><a href="FanjuZuijinMore.aspx" style="float:right;font-size:18px;margin-top:10px;">更多<<</a></div>
             <div class="tuijian tuitui" style="">
                 <asp:ListView ID="ListView1" runat="server" GroupItemCount="3" >
                     <LayoutTemplate>      
@@ -166,10 +161,10 @@
                         <td >
                   <div style="height:auto">
                        <div style="margin: 5px;border: 1px solid #ccc; float: left; width: 230px; height: 120px; overflow: hidden;">
-                           <a  href="<%# "Fanju.aspx?id="+ Eval("anime_ID") %>">
+                           <a  href="<%# "FanjuDisplay.aspx?id="+ Eval("anime_ID") %>">
                            <img  src="<%# Eval("anime_Image")%>" class=" img-rounded" width="230"  />
                                </a></div>
-                   <div class="ziti" style="padding: 5px;text-align: center;"> <a href="<%# "Fanju.aspx?id="+ Eval("anime_ID") %>"> <%#Eval("anime_Name") %></a></div>
+                   <div class="ziti" style="padding: 5px;text-align: center;"> <a href="<%# "FanjuDisplay.aspx?id="+ Eval("anime_ID") %>"> <%#Eval("anime_Name") %></a></div>
                       </div>
                             </td>
                     </ItemTemplate>
@@ -193,10 +188,10 @@
                         <td >
                             <div style="height:auto">
                                 <div style="margin: 5px;border: 1px solid #ccc; float: left; width: 230px; height: 120px; overflow: hidden;">
-                                    <a  href="<%# "Fanju.aspx?id="+ Eval("anime_ID") %>">
+                                    <a  href="<%# "FanjuDisplay.aspx?id="+ Eval("anime_ID") %>">
                                         <img  src="<%# Eval("anime_Image")%>" class=" img-rounded" width="230"  />
                                     </a></div>
-                                <div class="ziti" style="padding: 5px;text-align: center;"> <a href="<%# "Fanju.aspx?id="+ Eval("anime_ID") %>"> <%#Eval("anime_Name") %></a></div>
+                                <div class="ziti" style="padding: 5px;text-align: center;"> <a href="<%# "FanjuDisplay.aspx?id="+ Eval("anime_ID") %>"> <%#Eval("anime_Name") %></a></div>
                             </div>
                         </td>
                     </ItemTemplate>
@@ -220,10 +215,10 @@
                         <td >
                             <div style="height:auto">
                                 <div style="margin: 5px;border: 1px solid #ccc; float: left; width: 230px; height: 120px; overflow: hidden;">
-                                    <a  href="<%# "Fanju.aspx?id="+ Eval("anime_ID") %>">
+                                    <a  href="<%# "FanjuDisplay.aspx?id="+ Eval("anime_ID") %>">
                                         <img  src="<%# Eval("anime_Image")%>" class=" img-rounded" width="230"  />
                                     </a></div>
-                                <div class="ziti" style="padding: 5px;text-align: center;"> <a href="<%# "Fanju.aspx?id="+ Eval("anime_ID") %>"> <%#Eval("anime_Name") %></a></div>
+                                <div class="ziti" style="padding: 5px;text-align: center;"> <a href="<%# "FanjuDisplay.aspx?id="+ Eval("anime_ID") %>"> <%#Eval("anime_Name") %></a></div>
                             </div>
                         </td>
                     </ItemTemplate>
@@ -247,10 +242,10 @@
                         <td >
                             <div style="height:auto">
                                 <div style="margin: 5px;border: 1px solid #ccc; float: left; width: 230px; height: 120px; overflow: hidden;">
-                                    <a  href="<%# "Fanju.aspx?id="+ Eval("anime_ID") %>">
+                                    <a  href="<%# "FanjuDisplay.aspx?id="+ Eval("anime_ID") %>">
                                         <img  src="<%# Eval("anime_Image")%>" class=" img-rounded" width="230"  />
                                     </a></div>
-                                <div class="ziti" style="padding: 5px;text-align: center;"> <a href="<%# "Fanju.aspx?id="+ Eval("anime_ID") %>"> <%#Eval("anime_Name") %></a></div>
+                                <div class="ziti" style="padding: 5px;text-align: center;"> <a href="<%# "FanjuDisplay.aspx?id="+ Eval("anime_ID") %>"> <%#Eval("anime_Name") %></a></div>
                             </div>
                         </td>
                     </ItemTemplate>
@@ -309,7 +304,7 @@
                     </GroupTemplate>
                     <ItemTemplate>
                         <td >
-                   <div class="ziti ziti2" style="padding: 6px; text-align:left;"> <a style="font-size:20px;" > <%#Eval("anime_Name") %></a>
+                   <div class="ziti ziti2" style="padding: 6px; text-align:left;"> <a style="font-size:20px;" href="<%# "FanjuDisplay.aspx?id="+ Eval("anime_ID") %>">  <%#Eval("anime_Name") %></a>
                       </div>
                             </td>
                     </ItemTemplate>

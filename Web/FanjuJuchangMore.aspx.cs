@@ -9,16 +9,17 @@ using System.Web.UI.WebControls;
 
 namespace Web
 {
-    public partial class FanjuZuijinMore : System.Web.UI.Page
+    public partial class FanjuJuchangMore : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             BindListView1();
             BindList2();
         }
         protected void BindListView1()
         {
-            DataTable dt = AnimeManager.Selectall();
+            DataTable dt = AnimeManager.SelectJuchangAll();
             if (dt != null || dt.Rows.Count != 0)
             {
                 ListView1.DataSource = dt;

@@ -18,7 +18,7 @@ namespace Web
             {
                 
                 Session["Email"] = "12@qq.com";
-                ViewState["Art_id"] = 17;//  Convert.ToInt32(Request.QueryString["id"]);
+                ViewState["Art_id"] = 17;// Convert.ToInt32(Request.QueryString["id"]);
                 ArtEmail = ArticleManager.GetEmail((int)ViewState["Art_id"]);//根据文章Id找到作者email
                 Bing();
                 Bind2();
@@ -26,11 +26,11 @@ namespace Web
                 BindList3();
                 //ArtEmail = ArticleManager.GetEmail((int)ViewState["Art_id"]);//根据文章Id找到作者email
 
-                if (ArtStaticManager.addRead((int)ViewState["Art_id"]) == 1)//如果更新阅读次数成功
+                if (AnimeStaticManager.addRead((int)ViewState["Art_id"]) == 1)//如果更新阅读次数成功
                 {
                     BindReadCount();
                 }
-                if (ArtStaticManager.GetState((int) ViewState["Art_id"]) == 0)
+                if (AnimeStaticManager.GetState((int) ViewState["Art_id"]) == 0)
                 {
                     ImageButton1.ImageUrl = "Tubiao/收藏.png";
                 }
@@ -48,8 +48,8 @@ namespace Web
             RepeaterBind1();
            // BindList2();
            // BindList3();
-            num = ArtStaticManager.Getcol(17);
-            Label10.Text = ArtStaticManager.Getcol(17).ToString();
+            num = AnimeStaticManager.Getcol((int)ViewState["Art_id"]);
+            Label10.Text = AnimeStaticManager.Getcol((int)ViewState["Art_id"]).ToString();
         }
 
         //用户头像
@@ -117,7 +117,7 @@ namespace Web
         //绑定阅读信息
         protected void BindReadCount()
         {
-            DataTable dt = ArtStaticManager.SelectID((int)ViewState["Art_id"]);//根据文章ID找到文章的统计信息
+            DataTable dt = AnimeStaticManager.SelectID((int)ViewState["Art_id"]);//根据文章ID找到文章的统计信息
             if (dt != null && dt.Rows.Count == 1)
             {
                 Label4.Text = dt.Rows[0][1].ToString() + " 阅读";
@@ -172,6 +172,19 @@ namespace Web
             Panel pl = (bt.Parent.FindControl("Panel1") as Panel);
              pl.Visible = !pl.Visible;
            // RepeaterBind1();
+        }
+        //弹出回复框
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            LinkButton bt = (LinkButton)sender;
+            Control re = bt.Parent;
+            Panel pl = (bt.Parent.Parent.FindControl("Panel1") as Panel);
+            if (pl!=null)
+            {
+                pl.Visible = !pl.Visible;
+            }
+           
+            // RepeaterBind1();
         }
         //绑定显示评论
         private void RepeaterBind1()
@@ -235,7 +248,7 @@ namespace Web
         {
             if (ImageButton1.ImageUrl == "Tubiao/收藏1.png")
             {
-                if (ArtStaticManager.RedColl((int)ViewState["Art_id"]) == 1&&ArtStaticManager.UpdateFalse((int)ViewState["Art_id"])==1)
+                if (AnimeStaticManager.RedColl((int)ViewState["Art_id"]) == 1&&AnimeStaticManager.UpdateFalse((int)ViewState["Art_id"])==1)
                 {
                     num = num - 1;
                     Label10.Text = num.ToString();
@@ -245,7 +258,7 @@ namespace Web
             else
             {
                 ImageButton1.ImageUrl = "Tubiao/收藏1.png";
-                if (ArtStaticManager.addColl((int)ViewState["Art_id"]) == 1 && ArtStaticManager.UpdateTrue((int)ViewState["Art_id"]) == 1)
+                if (AnimeStaticManager.addColl((int)ViewState["Art_id"]) == 1 && AnimeStaticManager.UpdateTrue((int)ViewState["Art_id"]) == 1)
                 {
                     num = num + 1;
                     Label10.Text = num.ToString();

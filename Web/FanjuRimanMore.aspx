@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Nav.Master" AutoEventWireup="true" CodeBehind="FanjuZuijinMore.aspx.cs" Inherits="Web.FanjuZuijinMore" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Nav.Master" AutoEventWireup="true" CodeBehind="FanjuRimanMore.aspx.cs" Inherits="Web.FanjuRimanMore" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <style>
+      <style>
         .biaoqian{
             width:100%;
             height:75px;
@@ -191,7 +191,7 @@
     <div class="biaoqian">
             <div class="biao">  <img  src="Tubiao/标签.png" width="70" height="70" /></div>
             <div class="qian">
-                <asp:Label ID="Label1" runat="server" >最近更新</asp:Label>
+                <asp:Label ID="Label1" runat="server" >日漫强推</asp:Label>
             </div>
         </div>
     <div class="content">
@@ -309,5 +309,4 @@
         </div>
         <div class="clear"></div>
     </div>
-
 </asp:Content>

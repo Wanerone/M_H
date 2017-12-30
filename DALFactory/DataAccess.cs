@@ -81,6 +81,11 @@ namespace DALFactory
             string className = AssemblyName + "." + db + "ArtStatic";
             return (IArtStatic)Assembly.Load(AssemblyName).CreateInstance(className);
         }
+        public static IAnimeStatic CreateAnimeStatic()
+        {
+            string className = AssemblyName + "." + db + "AnimeStatic";
+            return (IAnimeStatic)Assembly.Load(AssemblyName).CreateInstance(className);
+        }
         public static IFriend CreateFriend()
         {
             string className = AssemblyName + "." + db + "Friend";

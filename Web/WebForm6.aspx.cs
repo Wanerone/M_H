@@ -14,8 +14,8 @@ namespace Web
         public int num;
         protected void Page_Load(object sender, EventArgs e)
         {
-            num = ArtStaticManager.Getcol(17);
-            Label1.Text = ArtStaticManager.Getcol(17).ToString();
+            num = AnimeStaticManager.Getcol(17);
+            Label1.Text = AnimeStaticManager.Getcol(17).ToString();
         }
 
 
@@ -44,7 +44,7 @@ namespace Web
         {
             if (ImageButton1.ImageUrl == "Tubiao/收藏1.png")
             {
-                if (ArtStaticManager.RedColl(17) == 1)
+                if (AnimeStaticManager.RedColl(17) == 1)
                 {
                     num = num - 1;
                     Label1.Text = num.ToString();
@@ -54,7 +54,7 @@ namespace Web
             else
             {
                 ImageButton1.ImageUrl = "Tubiao/收藏1.png";
-                if (ArtStaticManager.addColl(17) == 1)
+                if (AnimeStaticManager.addColl(17) == 1)
                 {
                     num = num +1;
                     Label1.Text = num.ToString();

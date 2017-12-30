@@ -123,6 +123,43 @@
             line-height: 25px;
             display: block;
         }
+        .datapager{
+            padding-top:40px;
+            width:100%;
+        }
+          pager
+         {
+              margin:0 100px;
+         display:block;
+         padding: 5px 0;
+         margin: 10px 0 10px 0;
+          }
+         .pager a, .pager span
+         {      
+          font-size:larger; 
+         border: 1px solid #E6E7E1;
+         line-height: 20px;
+         margin-right: 5px;
+         padding: 0 6px;
+         color: #0046D5;
+          }
+         .pager a:hover
+          {
+         text-decoration: none;
+         border-color: #0046D5;
+         }
+         .pager .current
+         {
+         background-color: #0046D5;
+         border-color: #0046D5;
+        color: #fff;
+         font-weight: bold;
+         }
+         .pager .total, .pager .total strong
+         {
+         color: Gray;
+         padding: 0 3px;
+        }
     </style>
      <div class="row">
     <div class="col-lg-9">
@@ -206,7 +243,7 @@
                                             <li>
                                                 <asp:Label ID="PinglunZan" runat="server" ></asp:Label></li>
                                             <li>
-                                                <asp:LinkButton ID="LinkButton2" runat="server"  CausesValidation="false" OnClick="LinkButton1_Click">回复</asp:LinkButton> </li>
+                                                <asp:LinkButton ID="LinkButton2" runat="server"  CausesValidation="false" OnClick="LinkButton2_Click">回复</asp:LinkButton> </li>
                                         </ul>
                                     </div>
                                 </ItemTemplate>
@@ -214,15 +251,24 @@
                         </ItemTemplate>
                     </asp:ListView>
                 </div>
-                <asp:DataPager ID="DataPager1" runat="server"  PagedControlID="ListView1" PageSize="5">
-                           <Fields>
-                                    <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" 
-                                                                                ShowNextPageButton="False" ShowPreviousPageButton="False" />
-                                 <asp:NumericPagerField />
-                                     <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" 
-                                                                               ShowNextPageButton="False" ShowPreviousPageButton="False" />
-                                 </Fields>
-                        </asp:DataPager>
+                <div class="datapager">
+               <asp:DataPager ID="dpUser" class='pager' PagedControlID="ListView1"  runat="server" PageSize="6">
+                         <Fields>                       
+                         <asp:TemplatePagerField>
+                        <PagerTemplate>
+                         <span class="total">共<strong><%=Math.Ceiling ((double)dpUser.TotalRowCount / dpUser.PageSize)%></strong>页<strong><%=dpUser.TotalRowCount%></strong>条记录</span>
+                          </PagerTemplate>
+                         </asp:TemplatePagerField>
+                         <asp:NextPreviousPagerField ButtonType="Link" ShowFirstPageButton="True" 
+                         ShowNextPageButton="False" ShowPreviousPageButton="False" 
+                         FirstPageText="首页" LastPageText="尾页" />
+                         <asp:NumericPagerField ButtonCount="5" CurrentPageLabelCssClass="current" />
+                         <asp:NextPreviousPagerField ButtonType="Link" ShowLastPageButton="True" 
+                         ShowNextPageButton="False" ShowPreviousPageButton="False" 
+                         FirstPageText="首页" LastPageText="尾页" />
+                         </Fields>
+                          </asp:DataPager>
+                    </div>
             </ContentTemplate>
         </asp:UpdatePanel>
        </div>

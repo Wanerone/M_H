@@ -16,14 +16,19 @@ namespace Web
         public int num;
         protected void Page_Load(object sender, EventArgs e)
         {
-            Bind();
-            BindList2();
-            num = ArtStaticManager.Getcol(17);
-            Label3.Text = ArtStaticManager.Getcol(17).ToString();
+            if (!IsPostBack)
+            {
+                ViewState["anime_ID"] = Convert.ToInt32(Request.QueryString["id"]);
+                Bind();
+                BindList2();
+                num = AnimeStaticManager.Getcol((int)ViewState["anime_ID"]);
+                Label3.Text = AnimeStaticManager.Getcol((int)ViewState["anime_ID"]).ToString();
+            }
+            
         }
         protected void Bind()
         {
-            DataTable dt = AnimeManager.SelectID(1);
+            DataTable dt = AnimeManager.SelectID((int)ViewState["anime_ID"]);
             if (dt != null && dt.Rows.Count == 1)
             {
                 Image1.ImageUrl = ResolveUrl(dt.Rows[0][2].ToString());
@@ -39,7 +44,7 @@ namespace Web
         {
             if (ImageButton1.ImageUrl == "Tubiao/收藏1.png")
             {
-                if (ArtStaticManager.RedColl(17) == 1)
+                if (AnimeStaticManager.RedColl((int)ViewState["anime_ID"]) == 1)
                 {
                     num = num - 1;
                     Label3.Text = num.ToString();
@@ -49,7 +54,7 @@ namespace Web
             else
             {
                 ImageButton1.ImageUrl = "Tubiao/收藏1.png";
-                if (ArtStaticManager.addColl(17) == 1)
+                if (AnimeStaticManager.addColl((int)ViewState["anime_ID"]) == 1)
                 {
                     num = num + 1;
                     Label3.Text = num.ToString();
@@ -58,7 +63,7 @@ namespace Web
         }
         private void BindList2()
         {
-            DataTable dt = ArticleManager.SelectTop(7);
+            DataTable dt = AnimeManager.SelectTop(7);
             if (dt != null || dt.Rows.Count != 0)
             {
                 ListView2.DataSource = dt;

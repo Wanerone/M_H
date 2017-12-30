@@ -10,7 +10,7 @@
 namespace Web {
     
     
-    public partial class FanjuZuijinMore {
+    public partial class FanjuJuchangMore {
         
         /// <summary>
         /// Label1 控件。

@@ -25,6 +25,10 @@ namespace BLL
         {
             return ianime.SelectAll();
         }
+        public static DataTable Selectall()
+        {
+            return ianime.Selectall();
+        }
         public static DataTable SelectTop(int top)
         {
             return ianime.SelectTop(top);
@@ -33,13 +37,25 @@ namespace BLL
         {
             return ianime.SelectTopGuochan(top);
         }
+        public static DataTable SelectGuochangAll()
+        {
+            return ianime.SelectGuochanAll();
+        }
         public static DataTable SelectTopRiman(int top)
         {
             return ianime.SelectTopRiman(top);
         }
+        public static DataTable SelectRimanAll()
+        {
+            return ianime.SelectRimanAll();
+        }
         public static DataTable SelectTopJuchang(int top)
         {
             return ianime.SelectTopJuchang(top);
+        }
+        public static DataTable SelectJuchangAll()
+        {
+            return ianime.SelectJuchangAll();
         }
         public static int AddAnime(Anime art)
         {

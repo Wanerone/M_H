@@ -9,49 +9,49 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class ArtStaticManager
+    public class AnimeStaticManager
     {
-        public static IArtStatic iartstatic = DataAccess.CreateArtStatic();
+        public static IAnimeStatic iastatic = DataAccess.CreateAnimeStatic();
         public static int addRead(int id)
         {
-            return iartstatic.addRead(id);
+            return iastatic.addRead(id);
         }
 
         public static int addColl(int id)
         {
-            return iartstatic.addColl(id);
+            return iastatic.addColl(id);
         }
         public static int RedColl(int id)
         {
-            return iartstatic.Redcol(id);
+            return iastatic.Redcol(id);
         }
         public static int addVote(int id)
         {
-            return iartstatic.addVopte(id);
+            return iastatic.addVopte(id);
         }
         public static DataTable SelectID(int id)
         {
-            return iartstatic.SelectID(id);
+            return iastatic.SelectID(id);
         }
 
         public static int Getcol(int id)
         {
-            return iartstatic.Getcol(id);
+            return iastatic.Getcol(id);
         }
 
         public static int GetState(int id)
         {
-            return iartstatic.GetState(id);
+            return iastatic.GetState(id);
         }
 
         public static int UpdateTrue(int id)
         {
-            return iartstatic.UpdateTrue(id);
+            return iastatic.UpdateTrue(id);
         }
 
         public static int UpdateFalse(int id)
         {
-            return iartstatic.UpdateFalse(id);
+            return iastatic.UpdateFalse(id);
         }
     }
 }

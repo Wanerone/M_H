@@ -44,6 +44,7 @@
     <Compile Include="Activity.cs" />
     <Compile Include="ActivityJoin.cs" />
     <Compile Include="Anime.cs" />
+    <Compile Include="AnimeStatic.cs" />
     <Compile Include="Article.cs" />
     <Compile Include="ArticleComment.cs" />
     <Compile Include="ArticleReply.cs" />
