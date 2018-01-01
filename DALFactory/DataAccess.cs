@@ -158,5 +158,15 @@ namespace DALFactory
             string className = AssemblyName + "." + db + "Anime";
             return (IAnime)Assembly.Load(AssemblyName).CreateInstance(className);
         }
+        public static IAnimeComment CreateAnimeComment()
+        {
+            string className = AssemblyName + "." + db + "AnimeComment";
+            return (IAnimeComment)Assembly.Load(AssemblyName).CreateInstance(className);
+        }
+        public static IAnimeReply CreateAnimeReply()
+        {
+            string className = AssemblyName + "." + db + "AnimeReply";
+            return (IAnimeReply)Assembly.Load(AssemblyName).CreateInstance(className);
+        }
     }
 }

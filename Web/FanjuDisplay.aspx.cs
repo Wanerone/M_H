@@ -18,6 +18,16 @@ namespace Web
         {
             if (!IsPostBack)
             {
+                if (Session["Name"] != null)
+                {
+                    LinkButton1.Text = Session["Name"].ToString();
+                    LinkButton1.PostBackUrl = "GeRenZhuYe.aspx";
+                    LinkButton2.Text = "退出";
+                }
+                else
+                {
+                    LinkButton1.PostBackUrl = "Login.aspx";
+                }
                 ViewState["anime_ID"] = Convert.ToInt32(Request.QueryString["id"]);
                 Bind();
                 BindList2();

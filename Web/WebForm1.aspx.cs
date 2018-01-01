@@ -13,16 +13,12 @@ namespace Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            BindList();
+
         }
-        private void BindList()
+
+        protected void Button1_Click(object sender, EventArgs e)
         {
-            DataTable dt = ArticleManager.SelectTop5();
-            if (dt!=null || dt.Rows.Count != 0)
-            {
-                ListView1.DataSource = dt;
-                ListView1.DataBind();
-            }
+            Response.Redirect("RegisterSucess.aspx");
         }
     }
 }

@@ -1,8 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Nav.Master" AutoEventWireup="true" CodeBehind="FanjuJuchangMore.aspx.cs" Inherits="Web.FanjuJuchangMore" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+     <div>
+            <ul class="nav navbar-nav navbar-right" > 
+                <li style="color:lightpink;">
+                    <asp:LinkButton ID="LinkButton1" runat="server" BackColor="#3DC7BE"  >请登录</asp:LinkButton></li> 
+                <li ><asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/WebT.aspx">&nbsp;&nbsp;</asp:LinkButton></li> 
+            </ul> 
+                </div>  
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <style>
+    <style>
         .biaoqian{
             width:100%;
             height:75px;
@@ -288,12 +295,12 @@
                     <asp:ListView ID="ListView2" runat="server" GroupItemCount="1" >
                     <LayoutTemplate>      
                         <table>
-                            <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
+                            <asp:PlaceHolder ID="groupPlaceholder" runat="server"></asp:PlaceHolder>
                         </table>
                     </LayoutTemplate>
                     <GroupTemplate>
                         <tr  >
-                            <asp:PlaceHolder ID="PlaceHolder2" runat="server"></asp:PlaceHolder>
+                            <asp:PlaceHolder ID="itemPlaceholder" runat="server"></asp:PlaceHolder>
                             </tr>
                     </GroupTemplate>
                     <ItemTemplate>

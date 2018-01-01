@@ -8,7 +8,7 @@ namespace Models
 {
  public   class Friend
     {
-        public int Friend_ID
+        public int friend_id
         {
             get;
             set;

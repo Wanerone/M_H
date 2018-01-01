@@ -12,10 +12,10 @@
                     <asp:Label ID="Label1" runat="server" Text="邮箱注册：" Font-Size="Medium"></asp:Label>
                     &nbsp; &nbsp;
                     <asp:TextBox ID="TextEmail" runat="server" Height="33px" Width="237px" style="margin-left: 0"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextEmail" ErrorMessage="*" ForeColor="Red" Font-Size="Medium"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextEmail" ErrorMessage="*" ForeColor="Red" Font-Size="Medium" Display="Dynamic"></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextEmail" ErrorMessage="邮箱格式错误" Font-Size="Medium" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                     <asp:Label ID="Labelcheckemail" runat="server" Font-Size="Medium" ForeColor="Red"></asp:Label>
-                    <asp:Label ID="Label8" runat="server"></asp:Label>
+                    <asp:Label ID="Label8" runat="server"  ForeColor="Red"></asp:Label>
                 </td>
             </tr>
              <tr>
@@ -23,9 +23,9 @@
                     <asp:Label ID="Label4" runat="server" Text="用户名："></asp:Label>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
                     <asp:TextBox ID="TextUser" runat="server" Height="33px" Width="238px"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextUser" ErrorMessage="*" ForeColor="Red" Font-Size="Medium"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextUser" ErrorMessage="*" ForeColor="Red" Font-Size="Medium" Display="Dynamic"></asp:RequiredFieldValidator>
                     <asp:Label ID="Labelcheckuser" runat="server" Font-Size="Medium" ForeColor="Red"></asp:Label>
-                    <asp:Label ID="Label9" runat="server"></asp:Label>
+                    <asp:Label ID="Label9" runat="server" ForeColor="Red"></asp:Label>
                  </td>
             </tr>
              <tr>

@@ -207,8 +207,10 @@
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="StyleSheet1.css" />
+    <Content Include="Tubiao\关注1.png" />
     <Content Include="Tubiao\喜欢1.png" />
     <Content Include="Tubiao\喜欢.png" />
+    <Content Include="Tubiao\已关注.png" />
     <Content Include="Tubiao\收藏.png" />
     <Content Include="Tubiao\收藏1.png" />
     <Content Include="Tubiao\收藏2 .png" />

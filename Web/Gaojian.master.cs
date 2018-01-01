@@ -11,7 +11,19 @@ namespace Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                if (Session["Name"] != null)
+                {
+                    LinkButton1.Text = Session["Name"].ToString();
+                    LinkButton1.PostBackUrl = "GeRenZhuYe.aspx";
+                    LinkButton2.Text = "退出";
+                }
+                else
+                {
+                    LinkButton1.PostBackUrl = "Login.aspx";
+                }
+            }
         }
     }
 }

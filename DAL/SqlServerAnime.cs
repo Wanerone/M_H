@@ -98,7 +98,7 @@ namespace DAL
         }
         public DataTable SelectJuchangAll()
         {
-            string sql = "select a.*,b.* from Anime a,AnimeStatic b where location='%剧场版' and a.anime_ID=b.anime_ID order by addtime desc ";
+            string sql = "select a.*,b.* from Anime a,AnimeStatic b where location like '%剧场版' and a.anime_ID=b.anime_ID order by addtime desc ";
             return SQLHelper.GetFillData(sql);
         }
     }

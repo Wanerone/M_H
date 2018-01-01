@@ -43,13 +43,14 @@
   <ItemGroup>
     <Compile Include="ActivityJoinManager.cs" />
     <Compile Include="ActivityManager.cs" />
+    <Compile Include="AnimeCommentManager.cs" />
     <Compile Include="AnimeManager.cs" />
+    <Compile Include="AnimeReplyManager.cs" />
     <Compile Include="AnimeStaticManager.cs" />
     <Compile Include="ArticleCommentManager.cs" />
     <Compile Include="ArticleManager.cs" />
     <Compile Include="ArticleReplyManager.cs" />
     <Compile Include="ArtStaticManager.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="FriendManager.cs" />
     <Compile Include="GoodsManager.cs" />
     <Compile Include="ManagersManager.cs" />

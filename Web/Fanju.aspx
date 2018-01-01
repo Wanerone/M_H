@@ -1,5 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Nav.Master" AutoEventWireup="true" CodeBehind="Fanju.aspx.cs" Inherits="Web.Fanju" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+     <div>
+            <ul class="nav navbar-nav navbar-right" > 
+                <li style="color:lightpink;">
+                    <asp:LinkButton ID="LinkButton1" runat="server" BackColor="#3DC7BE"  >请登录</asp:LinkButton></li> 
+                <li ><asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/WebT.aspx">&nbsp;&nbsp;</asp:LinkButton></li> 
+            </ul> 
+                </div>  
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style>
@@ -171,7 +178,7 @@
                         </asp:ListView>
             </div>
             <hr/>
-            <div class="bantou"><a href="#" style="font-size:30px;">国产原创</a><a href="#" style="float:right;font-size:18px;margin-top:10px;">更多<<</a></div>
+            <div class="bantou"><a href="#" style="font-size:30px;">国产原创</a><a href="FanjuGuochanMore.aspx" style="float:right;font-size:18px;margin-top:10px;">更多<<</a></div>
             <div class="tuijian tuitui" style="">
                 <asp:ListView ID="ListView3" runat="server" GroupItemCount="3" >
                     <LayoutTemplate>      
@@ -198,7 +205,7 @@
                 </asp:ListView>
             </div>
             <hr/>
-            <div class="bantou"><a href="#" style="font-size:30px;">日漫强推</a><a href="#" style="float:right;font-size:18px;margin-top:10px;">更多<<</a></div>
+            <div class="bantou"><a href="#" style="font-size:30px;">日漫强推</a><a href="FanjuRimanMore.aspx" style="float:right;font-size:18px;margin-top:10px;">更多<<</a></div>
             <div class="tuijian tuitui" style="">
                 <asp:ListView ID="ListView4" runat="server" GroupItemCount="3" >
                     <LayoutTemplate>      
@@ -225,7 +232,7 @@
                 </asp:ListView>
             </div>
             <hr/>
-            <div class="bantou"><a href="#" style="font-size:30px;">电影剧场版</a><a href="#" style="float:right;font-size:18px;margin-top:10px;">更多<<</a></div>
+            <div class="bantou"><a href="#" style="font-size:30px;">电影剧场版</a><a href="FanjuJuchangMore.aspx" style="float:right;font-size:18px;margin-top:10px;">更多<<</a></div>
             <div class="tuijian tuitui" style="">
                 <asp:ListView ID="ListView5" runat="server" GroupItemCount="3" >
                     <LayoutTemplate>      

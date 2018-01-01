@@ -1,5 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Nav.Master" AutoEventWireup="true" CodeBehind="ArticleDisplay.aspx.cs" Inherits="Web.ArticleDisplay" EnableEventValidation="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+     <div>
+            <ul class="nav navbar-nav navbar-right" > 
+                <li style="color:lightpink;">
+                    <asp:LinkButton ID="LinkButton1" runat="server" BackColor="#3DC7BE"  >请登录</asp:LinkButton></li> 
+                <li ><asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/WebT.aspx">&nbsp;&nbsp;</asp:LinkButton></li> 
+            </ul> 
+                </div>  
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style>
@@ -307,9 +314,14 @@
                 <p style="color:#140303">10</p>
             </a>
         </div>
-            <div>
-                <asp:Button ID="Button1" runat="server" Text="关注" CssClass="btn-block img-rounded" BackColor="#A1EAFB"  BorderStyle="None" Font-Size="Large" /></div>
+        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+            <ContentTemplate>
+            <div style="padding-left:35%;">
+                <asp:ImageButton ID="ImageButton2" Width="80" Height="35" runat="server" CausesValidation="false"  CssClass="btn-block img-rounded" BackColor="#A1EAFB"  BorderStyle="None" Font-Size="Large" OnClick="ImageButton2_Click" />
+
         </div>
+                </ContentTemplate>
+        </asp:UpdatePanel>
         <div class="usermore">
             <h3>TA的更多文章</h3>
             <div>
@@ -340,6 +352,7 @@
             </div>
         </div>
     </div>
+         </div>
     <!--
 <script>
 

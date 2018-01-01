@@ -18,44 +18,36 @@ namespace Web
         protected void Button1_Click(object sender, EventArgs e)
         {
             Users us = new Users();
-            UserIn ui = new UserIn();
             us.userName = TextUser.Text.Trim();
-            ui.userName= TextUser.Text.Trim(); ;
             us.password = TextPassword.Text.Trim();
             us.email = TextEmail.Text.Trim();
-            ui.email= TextEmail.Text.Trim();
             us.question = TextBox1.Text.Trim();
             us.answer = TextBox2.Text.Trim();
             us.creattime = DateTime.Now;
-            ui.headimg ="Image/touxiang.jpg";
-            ui.sex = DBNull.Value.ToString();
-            ui.birthday= DBNull.Value.ToString(); 
-            ui.addr= DBNull.Value.ToString(); 
-            ui.perSign= DBNull.Value.ToString();
             string checkCode = Session["CheckCode"].ToString();
             // int i = UserManger.AddUser(us);
-            string j = (UsersManager.GetEmail(us.email)).ToString();
-            string m = (UsersManager.GetName(us.userName)).ToString();
+            string j = UsersManager.SelectEmail(TextUser.Text.Trim());
+            string m = UsersManager.SelectName(TextEmail.Text.Trim());
             Session["Name"]= TextUser.Text.Trim();
             try
             {
                 if (checkCode.ToLower() == TextCheck.Text || checkCode.ToUpper() == TextCheck.Text)
                 {
-                    if (j == TextEmail.Text.Trim())
+                    if (m!=null)
                     {
-                        Label8.Text = "邮箱已被注册";
+                        Label8.Text = "邮箱已被注册！";
                     }
 
-                    else if (m == TextUser.Text.Trim())
+                    else if (j!=null)
                     {
-                        Label9.Text = "用户名重复";
+                        Label9.Text = "已存在该用户！";
                     }
 
 
-                    else if (UsersManager.AddUser(us) == 1&&UserInManager.Insert(ui)==1)
+                    else if (UsersManager.AddUser(us) == 1)
                     {
-
-                        Response.Redirect("~/RegisterSucess.aspx");
+                        // Response.Redirect("RegisterSucess.aspx",true);
+                        Response.Write("<script language='javascript'>window.location='RegisterSucess.aspx'</script>");
                     }
                 }
                 else

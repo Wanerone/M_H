@@ -12,14 +12,35 @@ namespace Web
     {
         public string ArtEmail;
         public int num;
+        public string email;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                
-                Session["Email"] = "12@qq.com";
-                ViewState["Art_id"] = 17;// Convert.ToInt32(Request.QueryString["id"]);
+                ViewState["Art_id"] =  Convert.ToInt32(Request.QueryString["id"]);
                 ArtEmail = ArticleManager.GetEmail((int)ViewState["Art_id"]);//根据文章Id找到作者email
+                Session["ArtEmail"]= ArticleManager.GetEmail((int)ViewState["Art_id"]);//根据文章Id找到作者email
+                if (Session["Name"] != null)
+                {
+                    LinkButton1.Text = Session["Name"].ToString();
+                    LinkButton1.PostBackUrl = "GeRenZhuYe.aspx";
+                    LinkButton2.Text = "退出";
+                    email = UsersManager.SelectEmail(Session["Name"].ToString());
+                    Session["Eemail"]= UsersManager.SelectEmail(Session["Name"].ToString());
+                    if (FriendManager.GetUserB(email)==ArtEmail)
+                    {
+                        ImageButton2.ImageUrl = "Tubiao/已关注.png";
+                    }
+                    else
+                    {
+                        ImageButton2.ImageUrl = "Tubiao/关注1.png";
+                    }
+                }
+                else
+                {
+                    LinkButton1.PostBackUrl = "Login.aspx";
+                }
+                //Session["Email"] = "12@qq.com";
                 Bing();
                 Bind2();
                 BindList2();
@@ -55,7 +76,7 @@ namespace Web
         //用户头像
         protected void Bind2()
         {
-            DataTable dt = UserInManager.SelectID("12@qq.com");
+            DataTable dt = UserInManager.SelectID(email);
             if (dt != null && dt.Rows.Count == 1)
             {
                 Image2.ImageUrl = ResolveUrl(dt.Rows[0][2].ToString());
@@ -262,6 +283,29 @@ namespace Web
                 {
                     num = num + 1;
                     Label10.Text = num.ToString();
+                }
+            }
+        }
+
+
+        protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
+        {
+            if (ImageButton2.ImageUrl == "Tubiao/关注1.png")
+            {
+                Friend f = new Friend();
+                f.friend_id = FriendManager.count() + 1;
+                f.UserA = Session["Eemail"].ToString();
+                f.UserB =Session["ArtEmail"].ToString();
+                if (FriendManager.addFriend(f) == 1)
+                {
+                    ImageButton2.ImageUrl = "Tubiao/已关注.png";
+                }
+            }
+            else
+            {
+                if (FriendManager.deleteFriend(Session["Eemail"].ToString(), Session["ArtEmail"].ToString()) == 1)
+                {
+                    ImageButton2.ImageUrl = "Tubiao/关注1.png";
                 }
             }
         }
