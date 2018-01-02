@@ -13,7 +13,7 @@ namespace Models
         private string Email;
         private DateTime time;
         private string Content;
-        public int VideoComment_ID
+        public int com_id
         {
             get { return this.Comment_id; }
             set { this.Comment_id = value; }

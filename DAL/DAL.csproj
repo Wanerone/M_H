@@ -50,6 +50,7 @@
     <Compile Include="SqlServerAnimeComment.cs" />
     <Compile Include="SqlServerAnimeReply.cs" />
     <Compile Include="SqlServerAnimeStatic.cs" />
+    <Compile Include="SqlServerArtCollection.cs" />
     <Compile Include="SqlServerArticle.cs" />
     <Compile Include="SqlServerArticleComment.cs" />
     <Compile Include="SqlServerArticleReply.cs" />
@@ -63,7 +64,7 @@
     <Compile Include="SqlServerPicComment.cs" />
     <Compile Include="SqlServerPicReply.cs" />
     <Compile Include="SqlServerPicture.cs" />
-    <Compile Include=",.cs" />
+    <Compile Include="SqlServerUserIn.cs" />
     <Compile Include="SqlServerUsers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerUsersAttention.cs" />
@@ -84,6 +85,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

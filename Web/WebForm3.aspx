@@ -9,72 +9,51 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-            <ContentTemplate>
-              
-                <h3><asp:Label ID="Label8" runat="server"></asp:Label>评论</h3>
-        <div class="pinlun">
-            <div class="pin"><asp:Image ID="Image2" runat="server" CssClass="img-circle" /></div>
-            <div class="lun">
-               <div class="tb"><asp:TextBox ID="TextBox1" runat="server" width="98%" height="70px" TextMode="MultiLine"></asp:TextBox></div> 
-                <div><asp:Button ID="Button3" runat="server" Text="发表评论" Height="70" Width="11%"  onclick="Button3_Click"/><span style="display: inline;" ><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="评论不能为空"></asp:RequiredFieldValidator></span></div>
+     <div>
+      <div style="font-family: 'Microsoft YaHei'; color: #2b2b2b;">
+
+            <div class="title_top">
+                <asp:Label ID="Label5" runat="server" Text="教学视频-添加视频" Font-Size="15" Font-Names="微软雅黑" ForeColor="#ffffff"></asp:Label>
             </div>
+            <div style="margin-top: 15px;">
+                <span>
+                    <asp:Label ID="Label1" runat="server" Text="视频标题"></asp:Label>
+                </span>
+                <span>
+                    <asp:TextBox ID="VideoTitle" runat="server" MaxLength="20" Width="200"></asp:TextBox>
+                </span>
+                <span>
+                    <asp:Label ID="Label2" runat="server" Text="(不超过20个字符)"  ForeColor="#555555" Font-Size="10"></asp:Label>
+                </span>
+            </div>
+            <div style="margin-top: 15px;">
+                <span>
+                    <asp:Label ID="Label3" runat="server" Text="视频文件"></asp:Label>
+                </span>
+                <span>
+                    <asp:FileUpload ID="FileVideo" runat="server" />
+                </span>
+                 <span>
+                    <asp:Label ID="Label6" runat="server" Text="(若视频前台无法播放,请上传MP4格式视频)"  ForeColor="#555555" Font-Size="10"></asp:Label>
+                </span>
+            </div>
+            <div style="margin-top: 15px;">
+                <span>
+                    <asp:Label ID="Label4" runat="server" Text="视频截图"></asp:Label>
+                </span>
+                <span>
+                    <asp:FileUpload ID="FileScreen" runat="server" />
+                <br />
+                简介：<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <br />
+                类别:<asp:Label ID="Label7" runat="server" Text="动漫"></asp:Label>
+                </span>
+            </div>
+            <div style="margin-left: 220px; margin-top: 15px;">
+                <asp:Button ID="Button1" runat="server" Text="添加" BorderStyle="None" BackColor="#72839D" Style="border-radius:2px; cursor:pointer; font-family:'Microsoft YaHei'; padding:3px; color:white;" OnClick="Button1_Click" />
+            </div>
+          
         </div>
-                <div class="content">
-                    
-                    <asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="Repeater1_ItemDataBound">
-                        <ItemTemplate>
-                            <div class="pinlun" >
-                                <div class="pin"><img src="<%#Eval("headimg") %>" class="img-circle"/></div>
-                                <div class="con">
-                                    <h5><%#Eval("userName") %></h5>
-                                    <h5><%#Eval("ComContent") %></h5>
-                                    <ul class="ulstyle">
-                                        <li>
-                                            #<asp:Label ID="Label19" runat="server" ></asp:Label>
-                                            </li>
-                                        <li>
-                                            <%#Eval("ComTime") %></li>
-                                        <li>
-                                            <asp:Label ID="PinglunZan" runat="server" ></asp:Label></li>
-                                        <li>
-                                            <asp:LinkButton ID="LinkButton1" runat="server"  CausesValidation="false" OnClick="LinkButton1_Click">回复</asp:LinkButton> </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <asp:Panel ID="Panel1" runat="server" Visible="false">
-                                <div class="pinlun">
-                                    <asp:HiddenField ID="HiddenField1" runat="server" Value='<%#Eval("ArticleComment_id") %>' />
-                                    <asp:Label ID="Label11" runat="server" Text='<%#Eval("ArticleComment_id") %>' Visible="false"></asp:Label>
-                                    <div class="pin"><asp:Image ID="Image3" runat="server" CssClass="img-circle" /></div>
-                                    <div class="lun">
-                                        <div class="tb"><asp:TextBox ID="TextBox2" runat="server" width="98%" height="100px" TextMode="MultiLine"></asp:TextBox></div>   
-                                        <asp:Button ID="Button1" runat="server" Text="回复" CausesValidation="False"  OnClick="Button4_Click"/>
-                                    </div>
-                                </div>
-                            </asp:Panel>
-                            <asp:Repeater ID="Repeater2" runat="server">
-                                <ItemTemplate>
-                                    <div class="con" style="padding-left: 93px; padding-top: 10px;">
-                                        <h5><%#Eval("aftername") %> ..回复.. <%#Eval("beforename") %><a style="padding-left: 15px;"><%#Eval("ReplyContent") %></a></h5>
-                                        <ul class="ulstyle">
-                                            <li>
-                                                <%#Eval("ReplyTime") %></li>
-                                            <li>
-                                                <asp:Label ID="PinglunZan" runat="server" ></asp:Label></li>
-                                            <li>
-                                                <asp:LinkButton ID="LinkButton2" runat="server"  CausesValidation="false" OnClick="LinkButton1_Click">回复</asp:LinkButton> </li>
-                                        </ul>
-                                    </div>
-                                </ItemTemplate>
-                            </asp:Repeater>
-                        </ItemTemplate>
-                    </asp:Repeater>
-                </div>
-            </ContentTemplate>
-        </asp:UpdatePanel>
     </div>
     </form>
 </body>

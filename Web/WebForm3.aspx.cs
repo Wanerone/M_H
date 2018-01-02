@@ -14,119 +14,69 @@ namespace Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                Session["Email"] = "12@qq.com";
-                ViewState["Art_id"] = 17;
-            }
-            RepeaterBind1();
+          
         }
-
-        //评论按钮
-        protected void Button3_Click(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e)
         {
-            Button bt = (Button)sender;
-
+            Models.Video videos = new Models.Video();
+            videos.Vid_title = VideoTitle.Text;
+            videos.Vid_creattime = DateTime.Now;
+            videos.Vid_id = 1;
             if (Session["Email"] != null)
             {
-                try
-                {
-                    ArticleComment CS = new ArticleComment();
-                    CS.ArticleComment_id = ArticleCommentManager.CountComment() + 1;
-                    //Session["pinlunid"] = CS.ArticleComment_id;
-                    CS.Art_id = (int)ViewState["Art_id"];
-                    //email为用户的email  CS.email=Session["Email"].ToString();
-                    CS.email = Session["Email"].ToString();
-                    CS.ComTime = DateTime.Now;
-                    CS.ComContent = TextBox1.Text;
-                    if (ArticleCommentManager.addComment_AC(CS) == 1)
-                    {
-                        TextBox1.Text = "";
-                        ScriptManager.RegisterStartupScript(this.UpdatePanel1, this.GetType(), "updateScript", "alert('评论成功！');", true);
-                        RepeaterBind1();
-                        // (Repeater1.FindControl("Lable19") as Label).Text = (ArticleCommentManager.CountComment((int)ViewState["Art_id"])).ToString();
-                    }
-                    else
-                    {
-                        ScriptManager.RegisterStartupScript(this.UpdatePanel1, this.GetType(), "updateScript", "alert('评论失败！');", true);
-                    }
-                }
+                videos.email = Session["Email"].ToString();
+            }
+            else videos.email = DBNull.Value.ToString();
+            videos.Vid_jianjie = TextBox1.Text.Trim();
+            videos.Vid_category = Label7.Text;
+            try
+            {
 
-                catch (Exception ex)
+                if (FileVideo.HasFile)
                 {
-                    Response.Write("错误原因：" + ex.Message);
+                    string filePath = FileVideo.PostedFile.FileName;
+                    string fileName = filePath.Substring(filePath.LastIndexOf("\\") + 1);
+                    string serverpath = Server.MapPath(@"~\Video\") + fileName;
+                    string relativepath = @"~\Video\" + fileName;
+                    FileVideo.PostedFile.SaveAs(serverpath);
+                    videos.Vid_url = relativepath;
+                }
+                else
+                {
+                    Page.ClientScript.RegisterClientScriptBlock(typeof(Object), "alert", "<script>alert('请先上传视频！');</script>");
+                    return;
+                }
+                if (FileScreen.HasFile)
+                {
+
+                    string filePathImg = FileScreen.PostedFile.FileName;
+                    string fileNameImg = filePathImg.Substring(filePathImg.LastIndexOf("\\") + 1);
+                    string serverpathImg = Server.MapPath(@"~\VideoImg\") + fileNameImg;
+                    string relativepathImg = @"~\VideoImg\" + fileNameImg;
+                    FileScreen.PostedFile.SaveAs(serverpathImg);
+                    videos.Vid_img = relativepathImg;
+                }
+                else
+                {
+                    Page.ClientScript.RegisterClientScriptBlock(typeof(Object), "alert", "<script>alert('请添加截屏照片！');</script>");
+                    return;
+                }
+            }
+            catch
+            { }
+            //if (!string.IsNullOrEmpty(FileVideo.PostedFile.ContentLength))
+            //{
+            if (!string.IsNullOrEmpty(VideoTitle.Text))
+            {
+                if (VideoManager.addVideo(videos) == 1)
+                {
+                    VideoTitle.Text = "";
+                    Response.Redirect("Login.aspx");
                 }
             }
             else
             {
-                ScriptManager.RegisterStartupScript(this.UpdatePanel1, this.GetType(), "updateScript", "alert('对不起，请先登录！');", true);
-            }
-
-        }
-        //弹出回复框
-        protected void LinkButton1_Click(object sender, EventArgs e)
-        {
-            LinkButton bt = (LinkButton)sender;
-            Control re = bt.Parent;
-            Panel pl = (bt.Parent.FindControl("Panel1") as Panel);
-            pl.Visible = !pl.Visible;
-            // RepeaterBind1();
-        }
-        //绑定显示评论
-        private void RepeaterBind1()
-        {
-            int nid = (int)ViewState["Art_id"];
-            DataTable dt = ArticleCommentManager.SelectID(nid);
-            if (dt != null && dt.Rows.Count != 0)
-            {
-                Repeater1.DataSource = dt;
-                Repeater1.DataBind();
-            }
-        }
-        //回复按钮
-        protected void Button4_Click(object sender, EventArgs e)
-        {
-            Button bt = (Button)sender;
-
-            //  try
-            //   {
-            ArticleReply rs = new ArticleReply();
-            HiddenField hf = bt.Parent.FindControl("HiddenField1") as HiddenField;
-            rs.ArticleComment_id = Int16.Parse(hf.Value);
-            rs.ArticleReply_id = ArticleReplyManager.CountReply() + 1;
-            rs.ReplyContent = (bt.Parent.FindControl("TextBox2") as TextBox)?.Text.Trim();
-            rs.email = Session["Email"].ToString();
-            rs.ReplyTime = DateTime.Now;
-            if (ArticleReplyManager.addreply_art(rs) == 1)
-            {
-                ScriptManager.RegisterStartupScript(this.UpdatePanel1, this.GetType(), "updateScript", "alert('回复成功！');", true);
-                RepeaterBind1();
-            }
-            else
-            {
-                ScriptManager.RegisterStartupScript(this.UpdatePanel1, this.GetType(), "updateScript", "alert('回复失败！');", true);
-
-            }
-
-            //   }
-            //   catch (Exception ex)
-            //  {
-            //      Response.Write("错误原因：" + ex.Message);
-            //   }
-
-        }
-        protected void Repeater1_ItemDataBound(object sender, RepeaterItemEventArgs e)
-        {
-            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
-            {
-                Repeater rpt = e.Item.FindControl("Repeater2") as Repeater;//找到里层的repeate;
-                int id = Convert.ToInt32(((Label)e.Item.FindControl("Label11")).Text);
-                DataTable sdr = ArticleReplyManager.SelectID(id);
-                if (rpt != null)
-                {
-                    rpt.DataSource = sdr;
-                    rpt.DataBind();
-                }
+                Page.ClientScript.RegisterClientScriptBlock(typeof(Object), "alert", "<script>alert('请输入标题！');</script>");
             }
         }
 

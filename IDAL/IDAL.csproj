@@ -47,6 +47,7 @@
     <Compile Include="IAnimeComment.cs" />
     <Compile Include="IAnimeReply.cs" />
     <Compile Include="IAnimeStatic.cs" />
+    <Compile Include="IArtCollection.cs" />
     <Compile Include="IArticle.cs" />
     <Compile Include="IArticleComment.cs" />
     <Compile Include="IArticleReply.cs" />

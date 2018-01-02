@@ -6,29 +6,28 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <script type="text/javascript">
-        function setVideo() {
-           <%-- var vdhf = document.getElementById('<%=VDHF.ClientID%>');--%>
-            var vdhf = document.getElementById("VDHF");
-            var vid = document.getElementById("vid");
-            vid.src = vdhf.value;
-
-        }
-    </script>
 </head>
 <body>
     <form id="form1" runat="server">
-     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-        <ContentTemplate>
-                            <asp:Label ID="txtTitle" runat="server" Text='<%#Eval("Vid_title") %>' ForeColor="#2b2b2b" Font-Size="18"></asp:Label>
-<video id="vid"     controls="controls"   preload="none"  height="350" width="600" >
-
-                           </video>
-                           
-                            <asp:HiddenField ID="VDHF" runat="server" />
-            </ContentTemplate>
-        </asp:UpdatePanel>
+          <asp:ListView ID="ListView1" runat="server"  GroupItemCount="1">
+                    <LayoutTemplate>      
+                        <table style="margin:auto;" class="img-responsive">
+                            <asp:PlaceHolder ID="groupPlaceholder" runat="server"></asp:PlaceHolder>
+                        </table>
+                    </LayoutTemplate>
+                    <GroupTemplate>
+                        <tr style="padding-top:10px;" >
+                            <asp:PlaceHolder ID="itemPlaceholder" runat="server"></asp:PlaceHolder>
+                            </tr>
+                    </GroupTemplate>
+                    <ItemTemplate>
+                        <td  style="padding:5px;">
+                            <%#Eval("Art_title") %>
+                            <br />
+                            <br />
+                            </td>
+                    </ItemTemplate>
+                        </asp:ListView>
     </form>
 </body>
 </html>

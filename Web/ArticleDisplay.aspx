@@ -3,7 +3,7 @@
      <div>
             <ul class="nav navbar-nav navbar-right" > 
                 <li style="color:lightpink;">
-                    <asp:LinkButton ID="LinkButton1" runat="server" BackColor="#3DC7BE"  >请登录</asp:LinkButton></li> 
+                    <asp:LinkButton ID="LinkButton1" runat="server" BackColor="#3DC7BE" >请登录</asp:LinkButton></li> 
                 <li ><asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/WebT.aspx">&nbsp;&nbsp;</asp:LinkButton></li> 
             </ul> 
                 </div>  
@@ -214,7 +214,7 @@
                                 <div class="pin"><img src="<%#Eval("headimg") %>" class="img-circle"/></div>
                                 <div class="con">
                                     <h5><%#Eval("userName") %></h5>
-                                    <h5><%#Eval("ComContent") %></h5>
+                                    <h5><a style="text-decoration:none;color:#000000;font-size:large;"><%#Eval("ComContent") %></a></h5>
                                     <ul class="ulstyle">
                                         <li>
                                             #<asp:Label ID="Label19" runat="server" ></asp:Label>
@@ -243,7 +243,7 @@
                             <asp:ListView ID="ListView2" runat="server">
                                 <ItemTemplate>
                                     <div class="con" style="padding-left: 93px; padding-top: 10px;">
-                                        <h5><%#Eval("aftername") %> ..回复.. <%#Eval("beforename") %><a style="padding-left: 15px;"><%#Eval("ReplyContent") %></a></h5>
+                                        <h5><a style="text-decoration:none;color:#50595C;font-size:medium;"><%#Eval("aftername") %></a>  回复 <a style="text-decoration:none;color:#50595C;font-size:medium;"><%#Eval("beforename") %></a> <a style="padding-left: 15px;text-decoration:none;color:#000000;font-size:large;"><%#Eval("ReplyContent") %></a></h5>
                                         <ul class="ulstyle">
                                             <li>
                                                 <%#Eval("ReplyTime") %></li>
@@ -317,7 +317,7 @@
         <asp:UpdatePanel ID="UpdatePanel2" runat="server">
             <ContentTemplate>
             <div style="padding-left:35%;">
-                <asp:ImageButton ID="ImageButton2" Width="80" Height="35" runat="server" CausesValidation="false"  CssClass="btn-block img-rounded" BackColor="#A1EAFB"  BorderStyle="None" Font-Size="Large" OnClick="ImageButton2_Click" />
+                <asp:ImageButton ID="ImageButton2" Width="80" Height="35" runat="server" CausesValidation="false"  CssClass="btn-block img-rounded"   BorderStyle="None" Font-Size="Large" OnClick="ImageButton2_Click" />
 
         </div>
                 </ContentTemplate>

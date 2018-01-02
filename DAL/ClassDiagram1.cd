@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DAL.SqlServerUserIn" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAAAAAAAAAAAQAAAAABAAAAAAAAAIACA=</HashCode>
+      <FileName>SqlServerUserIn.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.ArticleService" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CEAAAEAAACAAAAAAAAAAIAgAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>ArticleService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.SQLHelper" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAEQAAAAACAAAGQAAAACAAAAFAQAAAABAAAAAACAAAA=</HashCode>
+      <FileName>SQLHelper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.SqlServerActivity" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAACAAAgAAgAAAEAgAAAEAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>SqlServerActivity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.SqlServerActivityJoin" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAgAAAgAAAEAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>SqlServerActivityJOIN.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.SqlServerAnime" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAIEAAACQAABAAAAgAAAgAAAAAAAAAAAABQAAFAAA=</HashCode>
+      <FileName>SqlServerAnime.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.SqlServerAnimeComment" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAACAAAACAAAAAAAgAAAEAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>SqlServerAnimeComment.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.SqlServerAnimeReply" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAgAAAAACAAAAAAAAAAAAgAAAEAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>SqlServerAnimeReply.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.SqlServerAnimeStatic" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIEAAACACAAAAAIAAAAgAAIAAABAAQAAAAAAAAAA=</HashCode>
+      <FileName>SqlServerAnimeStatic.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.SqlServerArticle" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CEAAAEAACCAAAAAAAAAAAAgAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>SqlServerArticle.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.SqlServerArticleComment" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAACAAAACAAAAAAAgAAAEAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>SqlServerArticleComment.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.SqlServerArticleReply" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAACAAAAAAAAAABAgAAAEAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>SqlServerArticleReply.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.SqlServerArtStatic" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIEAAACACAAAAAIAAAAgAAIAAABAAQAAAAAAAAAA=</HashCode>
+      <FileName>SqlServerArtStatic.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.SqlServerFriend" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAECBAAA=</HashCode>
+      <FileName>SqlServerFriend.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.SqlServerGoods" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACAAAAAAAQAAAAgAAAEAAAAAAAAAIAIEAAA=</HashCode>
+      <FileName>SqlServerGoods.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.SqlServerManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAIAAAAAAAAAwAAAEABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SqlServerManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.SqlServerMessage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAABAAAJAAAAAAAAAAAAAAAABAAQAABAoAAAACA=</HashCode>
+      <FileName>SqlServerMessage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.SqlServerMessageReply" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAIAAAAAABAAAAAAAAAAAAAAAABAAQAAAAIAEAIDA=</HashCode>
+      <FileName>SqlServerMessageReply.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.SqlServerNews" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CEAAAAEgACAAAgAAAAAAAAgAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SqlServerNews.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.SqlServerPicComment" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAACAAAAAAAAAACAgAAAEAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>SqlServerPicComment.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.SqlServerPicReply" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABABCAAAAAAAAAAAAgAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SqlServerPicReply.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.SqlServerPicture" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACABAAAAACAAAAgAAAAAAIEAAAAAIAAAACA=</HashCode>
+      <FileName>SqlServerPicture.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.SqlServerUsers" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAACAAAAAAAAAIAAAAAAAAAAAAAAAAAQAAAFAA=</HashCode>
+      <FileName>SqlServerUsers.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.SqlServerUsersAttention" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SqlServerUsersAttention.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.SqlServerVideo" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAACCABAAAAIAAAAAAAAABABAAQAAAAIAIAACA=</HashCode>
+      <FileName>SqlServerVideo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.SqlServerVideoComment" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAACAAAAABAAAAAAgAAAEAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>SqlServerVideoComment.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.SqlServerVideoReply" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABCAAAAAAAAAAAAgAAAEAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>SqlServerVideoReply.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.SqlServerVideoStatic" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAACAAAAAIAAAAgAAAAAABAAQAAAAAAAAAA=</HashCode>
+      <FileName>SqlServerVideoStatic.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

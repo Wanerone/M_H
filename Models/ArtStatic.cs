@@ -29,10 +29,5 @@ namespace Models
             set;
         }
 
-        public int colState
-        {
-            get;
-            set;
-        }
     }
 }

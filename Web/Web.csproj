@@ -138,6 +138,10 @@
   <ItemGroup>
     <Content Include="AddArticle.aspx" />
     <Content Include="AddVideo.aspx" />
+    <Content Include="css\demo.css" />
+    <Content Include="css\fontawesome.min.css" />
+    <Content Include="css\normalize.css" />
+    <Content Include="css\style.css" />
     <Content Include="FanjuAdd.aspx" />
     <Content Include="FanjuGuochanMore.aspx" />
     <Content Include="FanjuJuchangMore.aspx" />
@@ -200,6 +204,7 @@
     <Content Include="LoginCss.css" />
     <Content Include="Loginzhuye.aspx" />
     <Content Include="Mastercss.css" />
+    <Content Include="Music.aspx" />
     <Content Include="MyHeadimg.aspx" />
     <Content Include="PlayVideo.aspx" />
     <Content Include="Register1.aspx" />
@@ -211,6 +216,8 @@
     <Content Include="Tubiao\喜欢1.png" />
     <Content Include="Tubiao\喜欢.png" />
     <Content Include="Tubiao\已关注.png" />
+    <Content Include="Tubiao\搜索.png" />
+    <Content Include="Tubiao\搜索1.png" />
     <Content Include="Tubiao\收藏.png" />
     <Content Include="Tubiao\收藏1.png" />
     <Content Include="Tubiao\收藏2 .png" />
@@ -396,6 +403,13 @@
     </Compile>
     <Compile Include="Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Music.aspx.cs">
+      <DependentUpon>Music.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Music.aspx.designer.cs">
+      <DependentUpon>Music.aspx</DependentUpon>
     </Compile>
     <Compile Include="MyHeadimg.aspx.cs">
       <DependentUpon>MyHeadimg.aspx</DependentUpon>

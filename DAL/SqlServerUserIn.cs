@@ -27,11 +27,12 @@ namespace DAL
             return SQLHelper.GetExcuteNonQuery(sql, sp);
         }
 
-        public DataTable SelectID(string email)
+        public DataTable Selectid(string email)
         {
             string sql = "select * from UserIn where email=@email";
-            SqlParameter[] sp = new SqlParameter[]{
-                new SqlParameter("@email",email),
+            SqlParameter[] sp = new SqlParameter[]
+            {
+                new SqlParameter("@email", email),
             };
             DataTable dt = SQLHelper.GetFillData(sql, sp);
             return dt;

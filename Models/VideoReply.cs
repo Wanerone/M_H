@@ -14,12 +14,12 @@ namespace Models
         private DateTime replytime;
         private string Content;
 
-        public int VideoReply_ID
+        public int reply_id
         {
             get { return this.videoReply_id; }
             set { this.videoReply_id = value; }
         }
-        public int VideoComment_ID
+        public int com_id
         {
             get { return this.videoComment_id; }
             set { this.videoComment_id = value; }

@@ -58,6 +58,15 @@ namespace Web.NewFolder1 {
         protected global::System.Web.UI.WebControls.ListView ListView1;
         
         /// <summary>
+        /// ListView3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView ListView3;
+        
+        /// <summary>
         /// ListView2 控件。
         /// </summary>
         /// <remarks>
@@ -67,13 +76,13 @@ namespace Web.NewFolder1 {
         protected global::System.Web.UI.WebControls.ListView ListView2;
         
         /// <summary>
-        /// FanjuPai 控件。
+        /// ListView4 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder FanjuPai;
+        protected global::System.Web.UI.WebControls.ListView ListView4;
         
         /// <summary>
         /// YinyuePai 控件。

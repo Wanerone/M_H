@@ -177,7 +177,7 @@
                 <div class="FanjuInfo">
                     <div style="color: darkgoldenrod; font-size: x-large;"> <asp:Label ID="Label1" runat="server"></asp:Label></div>
                     <div class="praise">
-                        <span id="praise"> <asp:ImageButton ID="ImageButton1" runat="server" OnClick="ImageButton1_Click" ImageUrl="Tubiao/收藏.png" width="40" height="40"  /></span>
+                        <span id="praise"> <asp:ImageButton ID="ImageButton1" runat="server" OnClick="ImageButton1_Click"  width="40" height="40"  /></span>
                         <span id="praise-txt" class=""><asp:Label ID="Label3" runat="server" ></asp:Label></span>
                     </div>
                     <div class="d_label"><b>地区：</b><asp:Label ID="Label4" runat="server" ></asp:Label></div>

@@ -103,5 +103,11 @@ namespace DAL
             };
             return SQLHelper.GetExcuteNonQuery(sql, sp);
         }
+        public DataTable ReadTop(int top)
+        {
+            string sql = "select  top " + top + " b.*,a.* from AnimeStatic a,Anime b where a.anime_ID=b.anime_ID order by readCount desc";
+
+            return SQLHelper.GetFillData(sql);
+        }
     }
 }

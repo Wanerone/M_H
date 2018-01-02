@@ -14,11 +14,10 @@ namespace DAL
     {
         public int addcomment_video(VideoComment comment_video)
         {
-            string sql = "insert into VideoComment values(@Vid_id,@email,@ComContent,@ComTime)";
+            string sql = "insert into VideoComment values(@com_id,@Vid_id,@email,@ComContent,@ComTime)";
             SqlParameter[] sp = new SqlParameter[]
             {
-
-
+                new SqlParameter("@com_id",comment_video.com_id),
                  new SqlParameter("@Vid_id",comment_video.Vid_id),
                   new SqlParameter("@email",comment_video.email),
                 new SqlParameter("@ComContent",comment_video.ComContent),
@@ -30,14 +29,14 @@ namespace DAL
 
         public DataTable SelectAll()
         {
-            string sql = "select  a.*,b.UserName,c.Name from Comment_Video a, Users b,Video c where a.Users_id=b.Users_id and a.Video_id=c.Video_id";
+            string sql = "select  a.*,b.userName,c.* from VideoComment a, Users b,Video c where a.email=b.email and a.Vid_id=c.Vid_id";
             return SQLHelper.GetFillData(sql);
         }
         public DataTable SelectcoutID(int VideoComment_ID)
         {
-            string sql = "select  * from VideoComment where  VideoComment_ID=@ VideoComment_ID";
+            string sql = "select  * from VideoComment where  Vid_id=@ Vid_id";
             SqlParameter[] sp = new SqlParameter[]{
-                new SqlParameter("@ VideoComment_ID", VideoComment_ID)
+                new SqlParameter("@Vid_id", VideoComment_ID)
             };
             DataTable dt = SQLHelper.GetFillData(sql, sp);
             return dt;
@@ -53,7 +52,7 @@ namespace DAL
         {
             string sql = "select a.*,b.userName from VideoComment a, Users b where Vid_id='" + id + "'and a.email=b.email order by ComTime";
             SqlParameter[] sp = new SqlParameter[]{
-                new SqlParameter("@VideoComment_ID",id)
+                new SqlParameter("@Vid_id",id)
             };
             DataTable dt = SQLHelper.GetFillData(sql, sp);
             return dt;
@@ -61,7 +60,7 @@ namespace DAL
 
         public int Delete(int id)
         {
-            string sql = "delete from VideoComment where VideoComment_ID='" + id + "'";
+            string sql = "delete from VideoComment where Vid_id='" + id + "'";
             return SQLHelper.GetExcuteNonQuery(sql);
         }
 

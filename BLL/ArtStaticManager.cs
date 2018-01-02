@@ -39,19 +39,5 @@ namespace BLL
             return iartstatic.Getcol(id);
         }
 
-        public static int GetState(int id)
-        {
-            return iartstatic.GetState(id);
-        }
-
-        public static int UpdateTrue(int id)
-        {
-            return iartstatic.UpdateTrue(id);
-        }
-
-        public static int UpdateFalse(int id)
-        {
-            return iartstatic.UpdateFalse(id);
-        }
     }
 }

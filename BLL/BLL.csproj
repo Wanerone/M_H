@@ -47,6 +47,7 @@
     <Compile Include="AnimeManager.cs" />
     <Compile Include="AnimeReplyManager.cs" />
     <Compile Include="AnimeStaticManager.cs" />
+    <Compile Include="ArtCollectionManager.cs" />
     <Compile Include="ArticleCommentManager.cs" />
     <Compile Include="ArticleManager.cs" />
     <Compile Include="ArticleReplyManager.cs" />

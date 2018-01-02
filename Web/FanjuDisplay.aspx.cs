@@ -29,6 +29,14 @@ namespace Web
                     LinkButton1.PostBackUrl = "Login.aspx";
                 }
                 ViewState["anime_ID"] = Convert.ToInt32(Request.QueryString["id"]);
+                if (AnimeStaticManager.GetState((int)ViewState["anime_ID"]) == 0)
+                {
+                    ImageButton1.ImageUrl = "Tubiao/收藏.png";
+                }
+                else
+                {
+                    ImageButton1.ImageUrl = "Tubiao/收藏1.png";
+                }
                 Bind();
                 BindList2();
                 num = AnimeStaticManager.Getcol((int)ViewState["anime_ID"]);

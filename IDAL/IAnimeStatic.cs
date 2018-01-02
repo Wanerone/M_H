@@ -18,5 +18,6 @@ namespace IDAL
         int GetState(int id);
         int UpdateTrue(int id);
         int UpdateFalse(int id);
+        DataTable ReadTop(int top);
     }
 }

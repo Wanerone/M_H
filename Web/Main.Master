@@ -197,10 +197,32 @@
                         </asp:ListView></div>
             </div>
             <hr/>
-            <h2 id="section-2">番剧</h2>
-           <div class="fanju">
-              
-           </div>
+             <div class="bantou" id="section-2"><a href="Fanju.aspx" style="font-size:30px;">番剧</a><a href="#" style="float:right;font-size:18px;margin-top:10px;">更多<<</a></div>
+            <div class="tuijian tuitui" style="">
+                <div  ><asp:ListView ID="ListView3" runat="server" GroupItemCount="4" >
+                    <LayoutTemplate>      
+                        <table style="margin:auto;" class="img-responsive">
+                            <asp:PlaceHolder ID="groupPlaceholder" runat="server"></asp:PlaceHolder>
+                        </table>
+                    </LayoutTemplate>
+                    <GroupTemplate>
+                        <tr style="padding-top:10px;" >
+                            <asp:PlaceHolder ID="itemPlaceholder" runat="server"></asp:PlaceHolder>
+                            </tr>
+                    </GroupTemplate>
+                    <ItemTemplate>
+                        <td >
+                  <div style="height:150px;">
+                       <div style="margin: 5px;border: 1px solid #ccc; float: left; width: 200px;">
+                           <a  href="<%# "FanjuDisplay.aspx?id="+ Eval("anime_ID") %>">
+                           <img  src="<%# Eval("anime_Image")%>" class=" img-rounded" width="200"  height="100"/>
+                               </a></div>
+                   <div class="ziti" style="padding: 5px;text-align: center;"> <a href="<%# "FanjuDisplay.aspx?id="+ Eval("anime_ID") %>"> <%#Eval("anime_Name") %></a></div>
+                      </div>
+                            </td>
+                    </ItemTemplate>
+                        </asp:ListView></div>
+            </div>
             <hr/>
             <h2 id="section-3">音乐</h2>
             <div class="yinyue">
@@ -269,9 +291,53 @@
                     </div>
             </div>
             <hr/>
-            <h2 id="ssection-2">排行</h2>
-            <div class="fanju">
-                <asp:ContentPlaceHolder ID="FanjuPai" runat="server"></asp:ContentPlaceHolder>
+            <div class="bantou" id="ssection-2"><a  href="#" style="font-size:30px;">排行</a><a href="#" style=" text-align:center; float:right;font-size:18px;margin-top:10px;">更多<<</a></div>
+            <div class="tuijian">
+                    <div class="tubiao">
+                        <table>
+                            <tr>
+                                <td><img src="Image/数字1.png"/></td>
+                            </tr>
+                            <tr>
+                                <td><img src="Image/数字2.png" /></td>
+                            </tr>
+                            <tr>
+                                <td><img src="Image/数字3.png" /></td>
+                            </tr>
+                            <tr>
+                                <td><img src="Image/数字4.png" /></td>
+                            </tr>
+                            <tr>
+                                <td><img src="Image/数字5.png" /></td>
+                            </tr>
+                            <tr>
+                                <td><img src="Image/数字6.png" /></td>
+                            </tr>
+                            <tr>
+                                <td><img src="Image/数字7.png" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                <div class="paihang">
+                    <asp:ListView ID="ListView4" runat="server" GroupItemCount="1" >
+                    <LayoutTemplate>      
+                        <table>
+                            <asp:PlaceHolder ID="groupPlaceholder" runat="server"></asp:PlaceHolder>
+                        </table>
+                    </LayoutTemplate>
+                    <GroupTemplate>
+                        <tr  >
+                            <asp:PlaceHolder ID="itemPlaceholder" runat="server"></asp:PlaceHolder>
+                            </tr>
+                    </GroupTemplate>
+                    <ItemTemplate>
+                        <td >
+                   <div class="ziti ziti2" style="padding: 6px; text-align:left;"> <a style="font-size:20px;" > <%#Eval("anime_Name") %></a>
+                      </div>
+                            </td>
+                    </ItemTemplate>
+                        </asp:ListView>
+                    </div>
             </div>
             <hr/>
             <h2 id="ssection-3">排行</h2>

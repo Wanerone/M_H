@@ -12,7 +12,7 @@ namespace IDAL
     {
         int addcomment_video(VideoComment videocomment);
         DataTable SelectAll();
-        DataTable SelectcoutID(int VideoComment_id);
+        DataTable SelectcoutID(int com_id);
         DataTable SelectTop(int top);
         DataTable SelectID(int id);
         int Delete(int id);

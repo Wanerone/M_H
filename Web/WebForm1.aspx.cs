@@ -18,7 +18,8 @@ namespace Web
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("RegisterSucess.aspx");
+            Session["key"] = TextBox1.Text;
+            Response.Redirect("~/WebForm2.aspx");
         }
     }
 }

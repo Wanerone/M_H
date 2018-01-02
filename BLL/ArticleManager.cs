@@ -46,5 +46,9 @@ namespace BLL
         {
             return isarticle.GetEmail(id);
         }
+        public static DataTable SelectLike(string like)
+        {
+            return isarticle.SelectLike(like);
+        }
     }
 }

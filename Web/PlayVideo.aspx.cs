@@ -16,7 +16,7 @@ namespace Web
         {
             if (!IsPostBack)
             {
-                int vid = Convert.ToInt32(Request.QueryString["id"]);
+                int vid = 2;// Convert.ToInt32(Request.QueryString["id"]);
                 ViewState["vid"] = vid;
             }
             BindPlayVideo();
@@ -27,10 +27,10 @@ namespace Web
             DataTable dt = VideoManager.selectKey(vid);
             if (dt != null && dt.Rows.Count == 1)
             {
-                txtTitle.Text = dt.Rows[0][1].ToString();
-                txtCreateTime.Text = string.Format("{0:yyyy-MM-dd hh:mm}", dt.Rows[0][2]);
+                txtTitle.Text = dt.Rows[0][3].ToString();
+                txtCreateTime.Text = string.Format("{0:yyyy-MM-dd hh:mm}", dt.Rows[0][7]);
 
-                VDHF.Value = dt.Rows[0][3].ToString().Replace("~", "..");
+                VDHF.Value = dt.Rows[0][2].ToString().Replace("~", "..");
 
              //   videoDLImgBtn.CommandArgument = dt.Rows[0][3].ToString();
               //  txtClickNum.Text = (Convert.ToInt32(dt.Rows[0][4]) + BLL.VideoManager.updateClickNum(vid)).ToString();

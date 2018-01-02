@@ -7,8 +7,8 @@
       <tbody>
       <tr>
         <td colspan="3">
-            <asp:TextBox ID="TextBox1" runat="server" Height="40px" MaxLength="30" Width="100%" BorderStyle="None" BorderWidth="0px" Font-Bold="True" Font-Names="Comic Sans MS" Font-Size="X-Large" >标题(不多于30个字符)</asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="标题不为空" ControlToValidate="TextBox1" Display="Dynamic"></asp:RequiredFieldValidator></td></tr>
+            <asp:TextBox ID="TextBox1" runat="server" Height="40px" MaxLength="30" Width="100%" BorderStyle="None" BorderWidth="0px" Font-Bold="True" Font-Names="Comic Sans MS" Font-Size="X-Large"  Text="标题(不多于30个字符)" onclick="Clear();" onblur="Get();"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="标题不为空" ControlToValidate="TextBox1" Display="Dynamic"  ></asp:RequiredFieldValidator></td></tr>
       <tr>
         <td colspan="3">
             <CKEditor:CKEditorControl ID="txtContent" runat="server" BasePath="ckeditor/" DefaultLanguage="zh-cn" Width="880" Height="600">
@@ -55,17 +55,12 @@
       </table>
       </div>
     <script>
-        var a = "标题(不多于30个字符)";
-        $("#<%=TextBox1.ClientID%>").focus(function () {
-            if ($(this).val()==a) {
-                $(this).val("");
-            }
-        });
-        $("#<%=TextBox1.ClientID%>").blur(function () {
-            if ($(this).length==0) {
-                $(this).val("标题(不多于30个字符)");
-            }
-        });
+       function Clear() {
+            document.getElementById("<%=TextBox1.ClientID%>").value = "";
+        }
+        function Get() {
+            document.getElementById("<%=TextBox1.ClientID%>").value = "标题(不多于30个字符)";
+        }
         $(document).ready(function () {
             $("#bu1").click(function () {
                 $("#<%=Label1.ClientID%>").text("画漫");

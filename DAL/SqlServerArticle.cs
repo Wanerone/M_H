@@ -74,5 +74,10 @@ namespace DAL
             };
             return SQLHelper.ExecuteScalar<string>(sql, sp);
         }
+        public DataTable SelectLike(string like)
+        {
+            string sql = "select * from Article where Art_title like '%" + like + "%' ";
+            return SQLHelper.GetFillData(sql);
+        }
     }
 }

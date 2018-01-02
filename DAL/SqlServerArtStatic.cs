@@ -73,36 +73,6 @@ namespace DAL
             };
            return SQLHelper.ExecuteScalar<int>(sql, sp);
         }
-        //获得收藏状态
-        public int GetState(int id)
-        {
-            string sql = "select colState from ArtStatic where Art_id=@id";
-            SqlParameter[] sp = new SqlParameter[]
-            {
-                new SqlParameter("@id", id)
-            };
-            return SQLHelper.ExecuteScalar<int>(sql, sp);
-        }
-        //收藏状态更新为1
-        public int UpdateTrue(int id)
-        {
-            string sql = "update ArtStatic set colState=1  where Art_id=@id";
-            SqlParameter[] sp = new SqlParameter[]
-            {
-                new SqlParameter("@id", id),
-            };
-            return SQLHelper.GetExcuteNonQuery(sql, sp);
-        }
-        //收藏状态更新为0
-        public int UpdateFalse(int id)
-        {
-            string sql = "update ArtStatic set colState=0  where Art_id=@id";
-            SqlParameter[] sp = new SqlParameter[]
-            {
-                new SqlParameter("@id", id),
-            };
-            return SQLHelper.GetExcuteNonQuery(sql, sp);
-        }
     }
 }
 

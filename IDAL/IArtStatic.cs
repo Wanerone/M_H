@@ -16,8 +16,5 @@ namespace IDAL
         DataTable SelectID(int id);
         int Getcol(int id);
         int Redcol(int id);
-        int GetState(int id);
-        int UpdateTrue(int id);
-        int UpdateFalse(int id);
     }
 }

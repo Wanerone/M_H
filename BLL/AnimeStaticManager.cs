@@ -53,5 +53,9 @@ namespace BLL
         {
             return iastatic.UpdateFalse(id);
         }
+        public static DataTable Readtop(int top)
+        {
+            return iastatic.ReadTop(top);
+        }
     }
 }

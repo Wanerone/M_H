@@ -47,6 +47,7 @@
     <Compile Include="AnimeComment.cs" />
     <Compile Include="AnimeReply.cs" />
     <Compile Include="AnimeStatic.cs" />
+    <Compile Include="ArtCollection.cs" />
     <Compile Include="Article.cs" />
     <Compile Include="ArticleComment.cs" />
     <Compile Include="ArticleReply.cs" />
