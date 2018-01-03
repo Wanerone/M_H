@@ -3,8 +3,10 @@
      <div>
             <ul class="nav navbar-nav navbar-right" > 
                 <li style="color:lightpink;">
-                    <asp:LinkButton ID="LinkButton1" runat="server" BackColor="#3DC7BE" >请登录</asp:LinkButton></li> 
-                <li ><asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/WebT.aspx">&nbsp;&nbsp;</asp:LinkButton></li> 
+                    <asp:HyperLink ID="HyperLink2" runat="server" BackColor="#3DC7BE">请登录</asp:HyperLink>
+                </li> 
+                <li >
+                    <asp:HyperLink ID="HyperLink1" runat="server" Visible="False"></asp:HyperLink></li> 
             </ul> 
                 </div>  
 </asp:Content>

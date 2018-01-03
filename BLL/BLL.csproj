@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="ActivityJoinManager.cs" />
     <Compile Include="ActivityManager.cs" />
+    <Compile Include="AnimeCollectionManager.cs" />
     <Compile Include="AnimeCommentManager.cs" />
     <Compile Include="AnimeManager.cs" />
     <Compile Include="AnimeReplyManager.cs" />

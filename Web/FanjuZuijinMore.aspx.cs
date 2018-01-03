@@ -17,13 +17,15 @@ namespace Web
             {
                 if (Session["Name"] != null)
                 {
-                    LinkButton1.Text = Session["Name"].ToString();
-                    LinkButton1.PostBackUrl = "GeRenZhuYe.aspx";
-                    LinkButton2.Text = "退出";
+                    HyperLink2.Text = Session["Name"].ToString();
+                    HyperLink2.NavigateUrl = "GeRenZhuYe.aspx";
+                    HyperLink1.Visible = true;
+                    HyperLink1.Text = "退出";
+                    HyperLink1.NavigateUrl = "~/WebT.aspx";
                 }
                 else
                 {
-                    LinkButton1.PostBackUrl = "Login.aspx";
+                    HyperLink2.NavigateUrl = "Login.aspx";
                 }
             }
             BindListView1();

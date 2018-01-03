@@ -44,6 +44,7 @@
     <Compile Include="IActivity.cs" />
     <Compile Include="IActivityJoin.cs" />
     <Compile Include="IAnime.cs" />
+    <Compile Include="IAnimeCollection.cs" />
     <Compile Include="IAnimeComment.cs" />
     <Compile Include="IAnimeReply.cs" />
     <Compile Include="IAnimeStatic.cs" />

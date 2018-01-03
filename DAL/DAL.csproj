@@ -47,6 +47,7 @@
     <Compile Include="SqlServerActivity.cs" />
     <Compile Include="SqlServerActivityJOIN.cs" />
     <Compile Include="SqlServerAnime.cs" />
+    <Compile Include="SqlServerAnimeCollection.cs" />
     <Compile Include="SqlServerAnimeComment.cs" />
     <Compile Include="SqlServerAnimeReply.cs" />
     <Compile Include="SqlServerAnimeStatic.cs" />

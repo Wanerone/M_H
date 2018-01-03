@@ -23,9 +23,11 @@ namespace Web
                 Session["ArtEmail"]= ArticleManager.GetEmail((int)ViewState["Art_id"]);//根据文章Id找到作者email
                 if (Session["Name"] != null)
                 {
-                    LinkButton1.Text = Session["Name"].ToString();
-                    LinkButton1.PostBackUrl = "GeRenZhuYe.aspx";
-                    LinkButton2.Text = "退出";
+                   HyperLink2.Text = Session["Name"].ToString();
+                    HyperLink2.NavigateUrl= "GeRenZhuYe.aspx";
+                    HyperLink1.Visible = true;
+                    HyperLink1.Text = "退出";
+                    HyperLink1.NavigateUrl = "~/WebT.aspx";
                     email = UsersManager.SelectEmail(Session["Name"].ToString());
                     Session["Eemail"]= UsersManager.SelectEmail(Session["Name"].ToString());
                     if (FriendManager.GetUserB(email)==ArtEmail)
@@ -36,11 +38,27 @@ namespace Web
                     {
                         ImageButton2.ImageUrl = "Tubiao/关注1.png";
                     }
+                    if (ArtCollectionManager.GetState(Session["Eemail"].ToString(), (int)ViewState["Art_id"]) != null)
+                    {
+                        if ((ArtCollectionManager.GetState(Session["Eemail"].ToString(), (int)ViewState["Art_id"])).Equals("F"))
+                        {
+                            ImageButton1.ImageUrl = "Tubiao/收藏.png";
+                        }
+                        else
+                        {
+                            ImageButton1.ImageUrl = "Tubiao/收藏1.png";
+                        }
+                    }
+                    else
+                    {
+                        ImageButton1.ImageUrl = "Tubiao/收藏.png";
+                    }
                 }
                 else
                 {
                     ImageButton2.ImageUrl = "Tubiao/关注1.png";
-                    LinkButton1.PostBackUrl = "Login.aspx";
+                    ImageButton1.ImageUrl = "Tubiao/收藏.png";
+                    HyperLink2.NavigateUrl = "Login.aspx";
                 }
                 //Session["Email"] = "12@qq.com";
                 Bing();
@@ -53,21 +71,7 @@ namespace Web
                 {
                     BindReadCount();
                 }
-                if(ArtCollectionManager.GetState(Session["Eemail"].ToString(), (int)ViewState["Art_id"])!=null)
-                {
-                    if ((ArtCollectionManager.GetState(Session["Eemail"].ToString(),(int) ViewState["Art_id"]) ).Equals("F"))
-                    {
-                        ImageButton1.ImageUrl = "Tubiao/收藏.png";
-                    }
-                    else
-                    {
-                        ImageButton1.ImageUrl = "Tubiao/收藏1.png";
-                    }
-                }
-                else
-                {
-                    ImageButton1.ImageUrl = "Tubiao/收藏.png";
-                }
+              
                 Label5.Text =" 收藏";
                 Label6.Text = "评论数";
              

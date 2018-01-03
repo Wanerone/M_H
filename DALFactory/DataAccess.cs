@@ -173,5 +173,11 @@ namespace DALFactory
             string className = AssemblyName + "." + db + "ArtCollection";
             return (IArtCollection)Assembly.Load(AssemblyName).CreateInstance(className);
         }
+
+        public static IAnimeCollection CreateAnimeCollection()
+        {
+            string className = AssemblyName + "." + db + "AnimeCollection";
+            return (IAnimeCollection)Assembly.Load(AssemblyName).CreateInstance(className);
+        }
     }
 }

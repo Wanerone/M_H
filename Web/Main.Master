@@ -125,11 +125,11 @@
 		    </ul>
                 </div>
            
-            <div style="padding-left:1000px;color:#140303;">
+            <div style="padding-left:1050px;color:#140303;">
             <ul class="nav navbar-nav " > 
                 <li> <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">                             
                     </asp:ContentPlaceHolder></li> 
-                <li class="dropdown"> 
+                <li class="dropdown" style="padding-left: 25px;"> 
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
                     投稿 <b class="caret"></b> 
                 </a> 

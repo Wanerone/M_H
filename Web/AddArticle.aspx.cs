@@ -55,6 +55,7 @@ namespace Web
                 if (ArticleManager.AddArticle(art) == 1)
                 {
                     Page.ClientScript.RegisterClientScriptBlock(typeof(Object), "alert", "<script>alert('文章上传成功！');</script>");
+                    Page.ClientScript.RegisterStartupScript(typeof(Object), "alert", "<script>alert('文章上传成功！');</script>");
                     Response.Redirect("WebT.aspx");
                 }
             }
