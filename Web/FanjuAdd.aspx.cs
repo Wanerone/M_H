@@ -19,7 +19,7 @@ namespace Web
         protected void Button1_Click(object sender, EventArgs e)
         {
             Anime art = new Anime();
-            art.anime_ID = AnimeManager.Getcount() + 1;
+           // art.anime_ID = AnimeManager.Getcount() + 1;
             art.addtime = TextBox6.Text.Trim();
             art.anime_Link = TextBox2.Text.Trim();
             art.anime_Name = TextBox1.Text.Trim();

@@ -170,7 +170,7 @@ namespace Web
                 try
                 {
                     ArticleComment CS = new ArticleComment();
-                    CS.ArticleComment_id = ArticleCommentManager.CountComment() + 1;
+                  //  CS.ArticleComment_id = ArticleCommentManager.CountComment() + 1;
                     //Session["pinlunid"] = CS.ArticleComment_id;
                     CS.Art_id = (int) ViewState["Art_id"];
                     //email为用户的email  CS.email=Session["Email"].ToString();
@@ -244,7 +244,7 @@ namespace Web
             ArticleReply rs = new ArticleReply();
             HiddenField hf = bt.Parent.FindControl("HiddenField1") as HiddenField;
             rs.ArticleComment_id = Int16.Parse(hf.Value);
-            rs.ArticleReply_id = ArticleReplyManager.CountReply() + 1;
+           // rs.ArticleReply_id = ArticleReplyManager.CountReply() + 1;
             rs.ReplyContent = (bt.Parent.FindControl("TextBox2") as TextBox)?.Text.Trim();
             rs.email = Session["Email"].ToString();
             rs.ReplyTime = DateTime.Now;
@@ -338,7 +338,7 @@ namespace Web
                  if (ImageButton2.ImageUrl == "Tubiao/关注1.png")
                     {
                         Friend f = new Friend();
-                        f.friend_id = FriendManager.count() + 1;
+                       // f.friend_id = FriendManager.count() + 1;
                         f.UserA = Session["Eemail"].ToString();
                         f.UserB =Session["ArtEmail"].ToString();
                         if (FriendManager.addFriend(f) == 1)

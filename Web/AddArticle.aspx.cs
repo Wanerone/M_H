@@ -33,7 +33,7 @@ namespace Web
                     art.email = Session["Email"].ToString();
                 }
                 else art.email = DBNull.Value.ToString();
-                art.Art_id = ArticleManager.GetIdCount()+1;
+              //  art.Art_id = ArticleManager.GetIdCount()+1;
                 art.Art_title = TextBox1.Text;
                 art.Art_creatTime = System.DateTime.Now;
                 art.Art_content = txtContent.Text;

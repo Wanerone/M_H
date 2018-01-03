@@ -21,7 +21,7 @@ namespace Web
             videos.Vid_title = TextBox1.Text;
             videos.Vid_creattime = DateTime.Now;
             videos.Vid_jianjie = TextBox2.Text;
-            videos.Vid_id = VideoManager.GetIdCount() + 1;
+            //videos.Vid_id = VideoManager.GetIdCount() + 1;
             videos.Vid_category = HiddenField1.Value;
             if (Session["Email"] != null)
             {
