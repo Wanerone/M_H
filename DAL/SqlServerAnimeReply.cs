@@ -14,11 +14,10 @@ namespace DAL
     {
         public int addreply(AnimeReply ar)
         {
-            string sql = "insert into AnimeReply values(@com_id,@reply_id,@email,@reply_content,@reply_time)";
+            string sql = "insert into AnimeReply values(@com_id,@email,@reply_content,@reply_time)";
             SqlParameter[] sp = new SqlParameter[]
             {
                 new SqlParameter("@com_id",ar.com_id),
-                new SqlParameter("@reply_id",ar.reply_id),
                 new SqlParameter("@email",ar.email),
                 new SqlParameter("@reply_content",ar.reply_content),
                 new SqlParameter("@reply_time",ar.reply_time),

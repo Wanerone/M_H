@@ -14,9 +14,8 @@ namespace DAL
     {
         public int addVideoReply(VideoReply reply)
         {
-            string sql = "insert into VideoReply values(@reply_id,@com_id,@email,@ReplyContent,@ReplyTime)";
+            string sql = "insert into VideoReply values(@com_id,@email,@ReplyContent,@ReplyTime)";
             SqlParameter[] sp = new SqlParameter[]{
-                new SqlParameter("@reply_id",reply.reply_id),
                 new SqlParameter("@com_id",reply.com_id),
                 new SqlParameter("@email",reply.email),
                 new SqlParameter("@ReplyTime",reply.ReplyTime),

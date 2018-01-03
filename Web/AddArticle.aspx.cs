@@ -42,8 +42,8 @@ namespace Web
                 {
                     string filePath = FileUpload1.PostedFile.FileName;
                     string filename = filePath.Substring(filePath.LastIndexOf("\\") + 1);
-                    string serverpath = Server.MapPath(@"Image\") + filename;
-                    string relativepath = @"Image\" + filename;
+                    string serverpath = Server.MapPath(@"Artimage\") + filename;
+                    string relativepath = @"Artimage\" + filename;
                     FileUpload1.PostedFile.SaveAs(serverpath);
                     art.Art_image = relativepath;
                 }

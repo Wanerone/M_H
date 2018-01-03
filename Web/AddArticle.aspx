@@ -55,11 +55,17 @@
       </table>
       </div>
     <script>
-       function Clear() {
-            document.getElementById("<%=TextBox1.ClientID%>").value = "";
+        function Clear() {
+            if (document.getElementById("<%=TextBox1.ClientID%>").value == "标题(不多于30个字符)") {
+                document.getElementById("<%=TextBox1.ClientID%>").value = "";
+            }
+            
         }
         function Get() {
-            document.getElementById("<%=TextBox1.ClientID%>").value = "标题(不多于30个字符)";
+            if (document.getElementById("<%=TextBox1.ClientID%>").value == "") {
+                document.getElementById("<%=TextBox1.ClientID%>").value = "标题(不多于30个字符)";
+            }
+            
         }
         $(document).ready(function () {
             $("#bu1").click(function () {

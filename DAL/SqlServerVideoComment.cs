@@ -14,10 +14,9 @@ namespace DAL
     {
         public int addcomment_video(VideoComment comment_video)
         {
-            string sql = "insert into VideoComment values(@com_id,@Vid_id,@email,@ComContent,@ComTime)";
+            string sql = "insert into VideoComment values(@Vid_id,@email,@ComContent,@ComTime)";
             SqlParameter[] sp = new SqlParameter[]
             {
-                new SqlParameter("@com_id",comment_video.com_id),
                  new SqlParameter("@Vid_id",comment_video.Vid_id),
                   new SqlParameter("@email",comment_video.email),
                 new SqlParameter("@ComContent",comment_video.ComContent),

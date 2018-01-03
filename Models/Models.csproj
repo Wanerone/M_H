@@ -69,6 +69,7 @@
     <Compile Include="Users.cs" />
     <Compile Include="UsersAttention.cs" />
     <Compile Include="Video.cs" />
+    <Compile Include="VideoCollection.cs" />
     <Compile Include="VideoComment.cs" />
     <Compile Include="VideoReply.cs" />
     <Compile Include="VideoStatic.cs" />

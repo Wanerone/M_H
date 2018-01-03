@@ -19,9 +19,8 @@ namespace DAL
         }
         public int Insert(Anime art)
         {
-            string sql = "insert into Anime values(@anime_ID,@anime_Name,@anime_Image,@anime_Link,@addtime,@jianjie,@location,@label)";
+            string sql = "insert into Anime values(@anime_Name,@anime_Image,@anime_Link,@addtime,@jianjie,@location,@label)";
             SqlParameter[] sp = new SqlParameter[]{
-                new SqlParameter("@anime_ID",art.anime_ID),
                 new SqlParameter("@anime_Name",art.anime_Name),
                 new SqlParameter("@anime_Image",art.anime_Image),
                 new SqlParameter("@anime_Link",art.anime_Link),

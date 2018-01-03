@@ -66,6 +66,7 @@
     <Compile Include="UserInManager.cs" />
     <Compile Include="UsersAttentionManager.cs" />
     <Compile Include="UsersManager.cs" />
+    <Compile Include="VideoCollectionManager.cs" />
     <Compile Include="VideoCommentManager.cs" />
     <Compile Include="VideoManager.cs" />
     <Compile Include="VideoReplyManager.cs" />

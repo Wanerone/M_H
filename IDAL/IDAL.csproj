@@ -68,6 +68,7 @@
     <Compile Include="IUsers.cs" />
     <Compile Include="IUsersAttention.cs" />
     <Compile Include="IVideo.cs" />
+    <Compile Include="IVideoCollection.cs" />
     <Compile Include="IVideoComment.cs" />
     <Compile Include="IVideoReply.cs" />
     <Compile Include="IVideoStatic.cs" />

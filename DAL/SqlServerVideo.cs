@@ -43,7 +43,6 @@ namespace DAL
             SqlParameter[] sp = new SqlParameter[]{
 
                 new SqlParameter("@email",video.email),
-                new SqlParameter("@Vid_id",video.Vid_id),
                 new SqlParameter("@Vid_url",video.Vid_url),
                 new SqlParameter("@Vid_title",video.Vid_title),
                 new SqlParameter("@Vid_jianjie",video.Vid_jianjie),
@@ -62,7 +61,7 @@ namespace DAL
         /// <returns>返回受影响行数</returns>
         public int addVideo(Video video)
         {
-            string sql = "insert into Video(email,Vid_id,Vid_url,Vid_title,Vid_jianjie,Vid_img,Vid_category,Vid_creattime) values( @email,@Vid_id,@Vid_url,@Vid_title,@Vid_jianjie,@Vid_img,@Vid_category,@Vid_creattime)";
+            string sql = "insert into Video(email,Vid_url,Vid_title,Vid_jianjie,Vid_img,Vid_category,Vid_creattime) values( @email,@Vid_url,@Vid_title,@Vid_jianjie,@Vid_img,@Vid_category,@Vid_creattime)";
     
             return SQLHelper.GetExcuteNonQuery(sql, AssignParameter(video));
         }

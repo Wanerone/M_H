@@ -14,10 +14,9 @@ namespace DAL
     {
         public int addcomment_ac(ArticleComment ac)
         {
-            string Sql = "insert into ArticleComment values(@ArticleComment_id,@Art_id,@email,@ComContent,@ComTime)";
+            string Sql = "insert into ArticleComment values(@Art_id,@email,@ComContent,@ComTime)";
             SqlParameter[] sp = new SqlParameter[]
             {
-                new SqlParameter("@ArticleComment_id",ac.ArticleComment_id), 
                 new SqlParameter("@Art_id",ac.Art_id),
                 new SqlParameter("@email",ac.email),
                 new SqlParameter("@ComContent",ac.ComContent),

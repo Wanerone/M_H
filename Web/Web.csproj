@@ -542,6 +542,7 @@
   <ItemGroup>
     <Folder Include="angular\" />
     <Folder Include="App_Data\" />
+    <Folder Include="Artimage\" />
     <Folder Include="ckeditor\" />
     <Folder Include="ckfinder\" />
     <Folder Include="fonts\" />

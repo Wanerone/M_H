@@ -14,9 +14,8 @@ namespace DAL
     {
         public int addFriend(Friend f)
         {
-            string sql = "insert into Friend values(@friend_id,@UserA,@UserB)";
+            string sql = "insert into Friend values(@UserA,@UserB)";
             SqlParameter[] sp = new SqlParameter[]{
-                new SqlParameter("@friend_id",f.friend_id),
                 new SqlParameter("@UserA",f.UserA),
                 new SqlParameter("@UserB",f.UserB),
             };

@@ -20,10 +20,9 @@ namespace DAL
 
         public int Insert(Article art)
         {
-            string sql = "insert into Article values(@email,@Art_id,@Art_title,@Art_content,@Art_image,@Art_creatTime,@Art_lable)";
+            string sql = "insert into Article values(@email,@Art_title,@Art_content,@Art_image,@Art_creatTime,@Art_lable)";
             SqlParameter[] sp = new SqlParameter[]{
                 new SqlParameter("@email",art.email),
-                new SqlParameter("@Art_id",art.Art_id),
                 new SqlParameter("@Art_title",art.Art_title),
                 new SqlParameter("@Art_content",art.Art_content),
                 new SqlParameter("@Art_image",art.Art_image),

@@ -14,10 +14,9 @@ namespace DAL
     {
         public int addreply_art(ArticleReply ar)
         {
-            string sql = "insert into ArticleReply values(@ArticleReply_id,@ArticleComment_id,@email,@ReplyContent,@ReplyTime)";
+            string sql = "insert into ArticleReply values(@ArticleComment_id,@email,@ReplyContent,@ReplyTime)";
             SqlParameter[] sp = new SqlParameter[]
             {
-                new SqlParameter("@ArticleReply_id",ar.ArticleReply_id),
                 new SqlParameter("@ArticleComment_id",ar.ArticleComment_id),
                 new SqlParameter("@email",ar.email),
                 new SqlParameter("@ReplyContent",ar.ReplyContent),
