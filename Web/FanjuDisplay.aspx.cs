@@ -20,17 +20,17 @@ namespace Web
             if (!IsPostBack)
             {
                 ViewState["anime_ID"] = Convert.ToInt32(Request.QueryString["id"]);//获得动画ID
-                if (Session["Name"] != null)
+                if (Session["Name"] != null && Session["Email"] != null)
                 {
                     HyperLink2.Text = Session["Name"].ToString();
                     HyperLink2.NavigateUrl = "GeRenZhuYe.aspx";
                     HyperLink1.Visible = true;
                     HyperLink1.Text = "退出";
                     HyperLink1.NavigateUrl = "~/WebT.aspx";
-                    Session["Eemail"] = UsersManager.SelectEmail(Session["Name"].ToString());
-                    if (AnimeCollectionManager.GetState(Session["Eemail"].ToString(), (int)ViewState["anime_ID"]) != null)
+                    //Session["Email"] = UsersManager.SelectEmail(Session["Name"].ToString());
+                    if (AnimeCollectionManager.GetState(Session["Email"].ToString(), (int)ViewState["anime_ID"]) != null)
                         {
-                            if ((AnimeCollectionManager.GetState(Session["Eemail"].ToString(), (int)ViewState["anime_ID"])).Equals("F"))
+                            if ((AnimeCollectionManager.GetState(Session["Email"].ToString(), (int)ViewState["anime_ID"])).Equals("F"))
                             {
                                 ImageButton1.ImageUrl = "Tubiao/收藏.png";
                             }
@@ -73,11 +73,11 @@ namespace Web
         }
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
-            if (Session["Name"] != null)
+            if (Session["Name"] != null && Session["Email"] != null)
             {
                 if (ImageButton1.ImageUrl == "Tubiao/收藏1.png")
                 {
-                    if (AnimeStaticManager.RedColl((int)ViewState["anime_ID"]) == 1 && AnimeCollectionManager.UpdateFalse(Session["Eemail"].ToString(), (int)ViewState["anime_ID"]) == 1)
+                    if (AnimeStaticManager.RedColl((int)ViewState["anime_ID"]) == 1 && AnimeCollectionManager.UpdateFalse(Session["Email"].ToString(), (int)ViewState["anime_ID"]) == 1)
                     {
                      //   num = num - 1;
                       //  Label3.Text = num.ToString();
@@ -87,10 +87,10 @@ namespace Web
                 }
                 else
                 {
-                    if (AnimeCollectionManager.GetState(Session["Eemail"].ToString(), (int)ViewState["anime_ID"]) == null)
+                    if (AnimeCollectionManager.GetState(Session["Email"].ToString(), (int)ViewState["anime_ID"]) == null)
                     {
                         AnimeCollection art = new AnimeCollection();
-                        art.email = Session["Eemail"].ToString();
+                        art.email = Session["Email"].ToString();
                         art.anime_ID = (int)ViewState["anime_ID"];
                         art.colState = "N";
                         if (AnimeCollectionManager.add(art) == 1)
@@ -106,7 +106,7 @@ namespace Web
                     else
                     {
                         ImageButton1.ImageUrl = "Tubiao/收藏1.png";
-                        if (AnimeStaticManager.addColl((int)ViewState["anime_ID"]) == 1 && AnimeCollectionManager.UpdateTrue(Session["Eemail"].ToString(), (int)ViewState["anime_ID"]) == 1)
+                        if (AnimeStaticManager.addColl((int)ViewState["anime_ID"]) == 1 && AnimeCollectionManager.UpdateTrue(Session["Email"].ToString(), (int)ViewState["anime_ID"]) == 1)
                         {
                             Label3.Text = (Convert.ToInt32(Label3.Text) + 1).ToString();
                            // Label3.Text = num.ToString();

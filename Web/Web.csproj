@@ -162,7 +162,6 @@
     <Content Include="bootstrap-3.3.7-dist\js\bootstrap.min.js" />
     <Content Include="bootstrap-3.3.7-dist\js\npm.js" />
     <Content Include="CheckCode.aspx" />
-    <Content Include="CreationArt.aspx" />
     <Content Include="css\layout.css" />
     <Content Include="Fanju.aspx" />
     <Content Include="FanjuDisplay.aspx" />
@@ -300,13 +299,6 @@
     </Compile>
     <Compile Include="Creation.Master.designer.cs">
       <DependentUpon>Creation.Master</DependentUpon>
-    </Compile>
-    <Compile Include="CreationArt.aspx.cs">
-      <DependentUpon>CreationArt.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CreationArt.aspx.designer.cs">
-      <DependentUpon>CreationArt.aspx</DependentUpon>
     </Compile>
     <Compile Include="Fanju.aspx.cs">
       <DependentUpon>Fanju.aspx</DependentUpon>

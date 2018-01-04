@@ -13,7 +13,7 @@ namespace Web
         {
             if (!IsPostBack)
             {
-                if (Session["Name"] != null)
+                if (Session["Name"] != null && Session["Email"] != null)
                 {
                     HyperLink2.Text = Session["Name"].ToString();
                     HyperLink2.NavigateUrl = "GeRenZhuYe.aspx";

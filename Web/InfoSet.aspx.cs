@@ -18,17 +18,25 @@ namespace Web
         {
             if (!IsPostBack)
             {
-               /*  if (Session["Name"] != null || Session["Email"]!=null)
+                 if (Session["Name"] != null && Session["Email"]!=null)
                  {
                      TextBox1.Text = Session["Name"].ToString();
                      Label1.Text = Session["Email"].ToString();
-                    TextBox2.Text = UserInManager.GetperSign(Session["Email"].ToString());
-                }*/
+                    if (UserInManager.GetperSign(Label1.Text)==null)
+                    {
+                    TextBox2.Text ="";
+                    }
+                    else
+                    {
+                        TextBox2.Text = UserInManager.GetperSign(Label1.Text);
+                    }
+                    
+                }
                 
-                 //TextBox2.Text = UserInManager.GetperSign(Session["Email"].ToString());
-                 TextBox1.Text = "泛泛而谈";
-                 Label1.Text = "222@qq.com";
-                 TextBox2.Text = UserInManager.GetperSign(Label1.Text);
+                 //TextBox2.Text = UserInManager.GetperSign(Session["Eemail"].ToString());
+                // TextBox1.Text = "泛泛而谈";
+               //  Label1.Text = "222@qq.com";
+                 //TextBox2.Text = UserInManager.GetperSign(Label1.Text);
                 RadioButtonList1.SelectedValue = "男";
                 Label2.Text = "";
                 BindProvince();
@@ -51,8 +59,8 @@ namespace Web
         protected void Button1_Click(object sender, EventArgs e)
         {
             UserIn us = new UserIn();
-            //  us.email = Session["Email"].ToString();
-            us.email = "222@qq.com";
+            us.email = Session["Email"].ToString();
+            //us.email = "222@qq.com";
             us.userName = TextBox1.Text.Trim();
             string m = UsersManager.SelectEmail(us.userName);
             us.sex = RadioButtonList1.SelectedValue;

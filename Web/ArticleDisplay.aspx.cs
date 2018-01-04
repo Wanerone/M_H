@@ -21,7 +21,7 @@ namespace Web
                 ViewState["Art_id"] =  Convert.ToInt32(Request.QueryString["id"]);
                 ArtEmail = ArticleManager.GetEmail((int)ViewState["Art_id"]);//根据文章Id找到作者email
                 Session["ArtEmail"]= ArticleManager.GetEmail((int)ViewState["Art_id"]);//根据文章Id找到作者email
-                if (Session["Name"] != null)
+                if (Session["Name"] != null && Session["Email"] != null)
                 {
                    HyperLink2.Text = Session["Name"].ToString();
                     HyperLink2.NavigateUrl= "GeRenZhuYe.aspx";
@@ -29,7 +29,7 @@ namespace Web
                     HyperLink1.Text = "退出";
                     HyperLink1.NavigateUrl = "~/WebT.aspx";
                     email = UsersManager.SelectEmail(Session["Name"].ToString());
-                    Session["Eemail"]= UsersManager.SelectEmail(Session["Name"].ToString());
+                  // Session["Eemail"]= UsersManager.SelectEmail(Session["Name"].ToString());
                     if (FriendManager.GetUserB(email)==ArtEmail)
                     {
                         ImageButton2.ImageUrl = "Tubiao/已关注.png";
@@ -38,9 +38,9 @@ namespace Web
                     {
                         ImageButton2.ImageUrl = "Tubiao/关注1.png";
                     }
-                    if (ArtCollectionManager.GetState(Session["Eemail"].ToString(), (int)ViewState["Art_id"]) != null)
+                    if (ArtCollectionManager.GetState(Session["Email"].ToString(), (int)ViewState["Art_id"]) != null)
                     {
-                        if ((ArtCollectionManager.GetState(Session["Eemail"].ToString(), (int)ViewState["Art_id"])).Equals("F"))
+                        if ((ArtCollectionManager.GetState(Session["Email"].ToString(), (int)ViewState["Art_id"])).Equals("F"))
                         {
                             ImageButton1.ImageUrl = "Tubiao/收藏.png";
                         }
@@ -91,7 +91,7 @@ namespace Web
         {
             if (email != null)
             {
-                DataTable dt = UserInManager.SelectID(email);
+                DataTable dt = UserInManager.SelectID(Session["Email"].ToString());
             if (dt != null && dt.Rows.Count == 1)
             {
                 Image2.ImageUrl = ResolveUrl(dt.Rows[0][2].ToString());
@@ -165,7 +165,7 @@ namespace Web
         {
             Button bt = (Button)sender;
             
-            if (Session["Name"] != null)
+            if (Session["Name"] != null && Session["Email"] != null)
             {
                 try
                 {
@@ -283,11 +283,11 @@ namespace Web
         //收藏
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
-            if (Session["Name"] != null)
+            if (Session["Name"] != null && Session["Email"] != null)
             {
                  if (ImageButton1.ImageUrl == "Tubiao/收藏1.png")
                     {
-                        if (ArtStaticManager.RedColl((int)ViewState["Art_id"]) == 1&&ArtCollectionManager.UpdateFalse(Session["Eemail"].ToString(),(int)ViewState["Art_id"])==1)
+                        if (ArtStaticManager.RedColl((int)ViewState["Art_id"]) == 1&&ArtCollectionManager.UpdateFalse(Session["Email"].ToString(),(int)ViewState["Art_id"])==1)
                         {
                             num = num - 1;
                             Label10.Text = num.ToString();
@@ -296,7 +296,7 @@ namespace Web
                     }
                     else
                     {
-                        if (ArtCollectionManager.GetState(Session["Eemail"].ToString(), (int)ViewState["Art_id"]) == null)
+                        if (ArtCollectionManager.GetState(Session["Email"].ToString(), (int)ViewState["Art_id"]) == null)
                         {
                             ArtCollection art = new ArtCollection();
                             art.email = Session["Eemail"].ToString();
@@ -315,7 +315,7 @@ namespace Web
                         else
                         {
                             ImageButton1.ImageUrl = "Tubiao/收藏1.png";
-                            if (ArtStaticManager.addColl((int)ViewState["Art_id"]) == 1 && ArtCollectionManager.UpdateTrue(Session["Eemail"].ToString(), (int)ViewState["Art_id"]) == 1)
+                            if (ArtStaticManager.addColl((int)ViewState["Art_id"]) == 1 && ArtCollectionManager.UpdateTrue(Session["Email"].ToString(), (int)ViewState["Art_id"]) == 1)
                             {
                                 num = num + 1;
                                 Label10.Text = num.ToString();
@@ -333,13 +333,13 @@ namespace Web
 
         protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
         {
-            if (Session["Name"] != null)
+            if (Session["Name"] != null && Session["Email"] != null)
             {
                  if (ImageButton2.ImageUrl == "Tubiao/关注1.png")
                     {
                         Friend f = new Friend();
                        // f.friend_id = FriendManager.count() + 1;
-                        f.UserA = Session["Eemail"].ToString();
+                        f.UserA = Session["Email"].ToString();
                         f.UserB =Session["ArtEmail"].ToString();
                         if (FriendManager.addFriend(f) == 1)
                         {
@@ -348,7 +348,7 @@ namespace Web
                     }
                     else
                     {
-                        if (FriendManager.deleteFriend(Session["Eemail"].ToString(), Session["ArtEmail"].ToString()) == 1)
+                        if (FriendManager.deleteFriend(Session["Email"].ToString(), Session["ArtEmail"].ToString()) == 1)
                         {
                             ImageButton2.ImageUrl = "Tubiao/关注1.png";
                         }

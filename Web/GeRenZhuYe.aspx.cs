@@ -27,7 +27,7 @@ namespace Web
                       ListView1.DataBind();
                   }
               }*/
-            DataTable dt = UserInManager.SelectID("222@qq.com");
+            DataTable dt = UserInManager.SelectID(Session["Email"].ToString());
             if (dt != null || dt.Rows.Count != 0)
             {
                 ListView1.DataSource = dt;

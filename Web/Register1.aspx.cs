@@ -29,6 +29,7 @@ namespace Web
             string j = UsersManager.SelectEmail(TextUser.Text.Trim());
             string m = UsersManager.SelectName(TextEmail.Text.Trim());
             Session["Name"]= TextUser.Text.Trim();
+            Session["Email"]= TextEmail.Text.Trim();
             try
             {
                 if (checkCode.ToLower() == TextCheck.Text || checkCode.ToUpper() == TextCheck.Text)

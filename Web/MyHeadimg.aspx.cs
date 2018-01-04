@@ -16,12 +16,12 @@ namespace Web
         {
             if (!IsPostBack)
             {
-              /*  if (Session["Email"] != null)
-                {
-                    string m = UserInManager.GetImage(Session["Email");
-                }*/
-                string m = UserInManager.GetImage("222@qq.com");
-                Image1.ImageUrl = m;
+                  if (Session["Name"] != null && Session["Email"] != null)
+                  {
+                    string m = UserInManager.GetImage(Session["Email"].ToString());
+                    Image1.ImageUrl = m;
+                }
+                //string m = UserInManager.GetImage("222@qq.com");
             }
         }
 
@@ -37,8 +37,7 @@ namespace Web
                 Image1.ImageUrl = relativepath;
                 UserIn us = new UserIn();
                 us.headimg = relativepath;
-              //  us.email =Session["Email"].ToString();
-                us.email = "222@qq.com";
+               us.email =Session["Email"].ToString();
                 if (UserInManager.UpdateImage(us) == 1)
                 {
                     // Page.ClientScript.RegisterStartupScript(typeof(Object), "alert", "<script>alert('保存成功！');</script>"); 

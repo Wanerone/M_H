@@ -12,7 +12,17 @@ namespace Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["Email"] = "12@qq.com";
+            if(!IsPostBack)
+            {
+                if (Session["Name"] != null && Session["Email"] != null)
+                {
+
+                }
+                else
+                {
+                    Page.ClientScript.RegisterClientScriptBlock(typeof(Object), "alert", "<script>alert('请登录！');</script>");
+                }
+            }
         }
 
         public void AddVideoss()

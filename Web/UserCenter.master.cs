@@ -15,13 +15,14 @@ namespace Web
         {
             if (!IsPostBack)
             {
-                if (Session["Name"] != null)
+                if (Session["Name"] != null && Session["Email"] != null)
                 {
                     HyperLink2.Text = Session["Name"].ToString();
                     HyperLink2.NavigateUrl = "GeRenZhuYe.aspx";
                     HyperLink1.Visible = true;
                     HyperLink1.Text = "退出";
                     HyperLink1.NavigateUrl = "~/WebT.aspx";
+                   // Session["Eemail"] = UsersManager.SelectEmail(Session["Name"].ToString());
                 }
                 else
                 {
@@ -41,7 +42,7 @@ namespace Web
                       ListView1.DataBind();
                   }
               }*/
-           DataTable dt = UserInManager.SelectID("222@qq.com");
+           DataTable dt = UserInManager.SelectID(Session["Email"].ToString());
             if (dt != null || dt.Rows.Count != 0)
             {
                 ListView1.DataSource = dt;
