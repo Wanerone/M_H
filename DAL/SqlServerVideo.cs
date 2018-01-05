@@ -126,11 +126,24 @@ namespace DAL
         /// <returns>返回查询结果</returns>
         public DataTable selectAll()
         {
-            string sql = "select * from Video";
+            string sql = "select a.*,b.userName,c.* from Video a,UserIn b,VideoStatic c where a.email=b.email and a.Vid_id=c.Vid_id";
 
             return SQLHelper.GetFillData(sql);
         }
+        public DataTable SelectTop(int top)
+        {
+            string sql = "select  top " + top + " * from Video order by Vid_creattime desc";
 
+            return SQLHelper.GetFillData(sql);
+        }
+        public int countID(string email)
+        {
+            string sql = "select count(*) from Video where email=@email";
+            SqlParameter[] sp = new SqlParameter[]{
+                new SqlParameter("@email",email),
+            };
+            return SQLHelper.ExecuteScalar<int>(sql, sp);
+        }
         /// <summary>
         /// 按住键查询
         /// </summary>
@@ -145,6 +158,15 @@ namespace DAL
 
             return SQLHelper.GetFillData(sql, sp);
         }
-
+        public DataTable SelectLike(string like)
+        {
+            string sql = "select a.*,b.userName,c.* from Video a,UserIn b,VideoStatic c where a.email=b.email and a.Vid_id=c.Vid_id and  a.Vid_title like '%" + like + "%' ";
+            return SQLHelper.GetFillData(sql);
+        }
+        public int CountLike(string like)
+        {
+            string sql = "select count(*) from Video where Vid_title like '%" + like + "%' ";
+            return SQLHelper.ExecuteScalar<int>(sql);
+        }
     }
 }

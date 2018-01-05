@@ -101,7 +101,11 @@
         }
         .tb {
             float: left;
-            width: 88%;
+            width: 85%;
+        }
+        .bt{
+            float:left;
+            width:15%;
         }
         .con {
             width: 90%;
@@ -200,12 +204,12 @@
                     <span id="praise"> <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="False" OnClick="ImageButton1_Click"  width="40" height="40"  /></span>
                     <span id="praise-txt" class=""><asp:Label ID="Label10" runat="server" ></asp:Label></span>
                 </div>
-                <h3><asp:Label ID="Label8" runat="server"></asp:Label>评论</h3>
+                <h2><asp:Label ID="Label8" ForeColor="#DC2F2F" runat="server"></asp:Label>条评论</h2>
         <div class="pinlun">
             <div class="pin"><asp:Image ID="Image2" runat="server" CssClass="img-circle" /></div>
             <div class="lun">
                <div class="tb"><asp:TextBox ID="TextBox1" runat="server" width="98%" height="70px" TextMode="MultiLine"></asp:TextBox></div> 
-                <div><asp:Button ID="Button3" runat="server" Text="发表评论" Height="70" Width="11%"  onclick="Button3_Click"/><span style="display: inline;" ><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="评论不能为空"></asp:RequiredFieldValidator></span></div>
+                <div class="bt"><asp:Button ID="Button3" runat="server" CssClass="btn-lg" Text="发表评论" Height="70"   onclick="Button3_Click"/><span style="display: inline;" ><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="评论不能为空"></asp:RequiredFieldValidator></span></div>
             </div>
         </div>
                 <div class="content">
@@ -238,7 +242,7 @@
                                     <div class="lun">
                                         <div class="tb"><asp:TextBox ID="TextBox2" runat="server" width="98%" height="100px" TextMode="MultiLine"></asp:TextBox></div>   
                                         <div>
-                                            <asp:Button ID="Button4" runat="server" Text="回复"  height="70" Width="11%" CausesValidation="False" OnClick="Button4_Click"/><span style="display: inline;" ><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="评论不能为空"></asp:RequiredFieldValidator></span></div>     
+                                            <asp:Button ID="Button4" runat="server" CssClass="btn-lg" Text="回复"  height="70" Width="11%" CausesValidation="False" OnClick="Button4_Click"/><span style="display: inline;" ><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="评论不能为空"></asp:RequiredFieldValidator></span></div>     
                                     </div>
                                 </div>
                             </asp:Panel>
@@ -252,7 +256,7 @@
                                             <li>
                                                 <asp:Label ID="PinglunZan" runat="server" ></asp:Label></li>
                                             <li>
-                                                <asp:LinkButton ID="LinkButton2" runat="server"  CausesValidation="false" OnClick="LinkButton2_Click">回复</asp:LinkButton> </li>
+                                             
                                         </ul>
                                     </div>
                                 </ItemTemplate>
@@ -285,7 +289,7 @@
     <div class="col-lg-3" >
         <div class="user">
             <div class="userinfo">
-            <asp:ListView ID="ListView2" runat="server">
+            <asp:ListView ID="ListView4" runat="server">
                     <LayoutTemplate>      
                         <table  style="width:100%">
                             <asp:PlaceHolder ID="groupPlaceholder" runat="server"></asp:PlaceHolder>
@@ -308,16 +312,19 @@
                     </ItemTemplate>
                         </asp:ListView>
                 </div>
+            <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+            <ContentTemplate>
              <div class="tongji">
             <a class="guanzhu" href="#"><p style="color:#90A4AE;">文章数</p>
-                <p style="color:#140303">10</p>
+                <p style="color:#140303">
+                    <asp:Label ID="Label9" runat="server" ></asp:Label></p>
             </a>
             <a class="guanzhu" href="#"><p style="color:#90A4AE">粉丝数</p>
-                <p style="color:#140303">10</p>
+                <p style="color:#140303">
+                    <asp:Label ID="Label12" runat="server" ></asp:Label></p>
             </a>
         </div>
-        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-            <ContentTemplate>
+        
             <div style="padding-left:35%;">
                 <asp:ImageButton ID="ImageButton2" Width="80" Height="35" runat="server" CausesValidation="false"  CssClass="btn-block img-rounded"   BorderStyle="None" Font-Size="Large" OnClick="ImageButton2_Click" />
 
@@ -350,7 +357,7 @@
                         </asp:ListView>
             </div>
             <div style="padding-top:10px;">
-                <asp:Button ID="Button2" runat="server" Text="查看更多" CssClass="btn-block img-rounded" BackColor="#A1EAFB"  BorderStyle="None" Font-Size="Large" /></div>
+                <asp:Button ID="Button2" runat="server" Text="查看更多" CausesValidation="false" CssClass="btn-block img-rounded" BackColor="#A1EAFB"  BorderStyle="None" Font-Size="Large" /></div>
             </div>
         </div>
     </div>

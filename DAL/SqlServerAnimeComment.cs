@@ -17,7 +17,7 @@ namespace DAL
             string Sql = "insert into AnimeComment values(@anime_ID,@email,@comment,@time)";
             SqlParameter[] sp = new SqlParameter[]
             {
-                new SqlParameter("@@anime_ID",ac.@anime_ID),
+                new SqlParameter("@anime_ID",ac.@anime_ID),
                 new SqlParameter("@email",ac.email),
                 new SqlParameter("@comment",ac.comment),
                 new SqlParameter("@time",ac.time),
@@ -51,7 +51,7 @@ namespace DAL
         {
             string sql = "select a.*,b.userName,b.headimg from AnimeComment a, UserIn b where anime_ID='" + id + "'and a.email=b.email order by time";
             SqlParameter[] sp = new SqlParameter[]{
-                new SqlParameter("@id",id)
+                new SqlParameter("@anime_ID",id)
             };
             DataTable dt = SQLHelper.GetFillData(sql, sp);
             return dt;

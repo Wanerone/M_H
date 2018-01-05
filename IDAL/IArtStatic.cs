@@ -16,5 +16,6 @@ namespace IDAL
         DataTable SelectID(int id);
         int Getcol(int id);
         int Redcol(int id);
+        DataTable ReadTop(int top);
     }
 }

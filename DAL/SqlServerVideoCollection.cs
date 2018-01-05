@@ -13,7 +13,7 @@ namespace DAL
     {
         public int add(VideoCollection art)
         {
-            string sql = "insert into AnimeCollection values(@email,@Vid_id,@colState)";
+            string sql = "insert into VideoCollection values(@email,@Vid_id,@colState)";
             SqlParameter[] sp = new SqlParameter[]
             {
                 new SqlParameter("@email",art.email),

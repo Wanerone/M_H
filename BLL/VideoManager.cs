@@ -33,7 +33,10 @@ namespace BLL
         {
             return ivideo.addNumVideo(videoes);
         }
-
+        public static DataTable SelectTop(int top)
+        {
+            return ivideo.SelectTop(top);
+        }
         /// <summary>
         /// 删除全部数据
         /// </summary>
@@ -92,6 +95,18 @@ namespace BLL
         public static DataTable SelectAll(string email)
         {
             return ivideo.SelectAll(email);
+        }
+        public static DataTable SelectLike(string like)
+        {
+            return ivideo.SelectLike(like);
+        }
+        public static int CountLike(string like)
+        {
+            return ivideo.CountLike(like);
+        }
+        public static int countID(string email)
+        {
+            return ivideo.countID(email);
         }
     }
 }

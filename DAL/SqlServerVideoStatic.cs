@@ -71,6 +71,11 @@ namespace DAL
             };
             return SQLHelper.ExecuteScalar<int>(sql, sp);
         }
+        public DataTable ReadTop(int top)
+        {
+            string sql = "select  top " + top + " b.*,a.* from VideoStatic a,Video b where a.Vid_id=b.Vid_id order by readCount desc";
 
+            return SQLHelper.GetFillData(sql);
+        }
     }
 }

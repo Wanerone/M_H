@@ -21,13 +21,17 @@ namespace BLL
         {
             return ifriend.GetUserB(UserA);
         }
-        public static int count()
+        public static int count(string UserB)
         {
-            return ifriend.count();
+            return ifriend.count(UserB);
         }
         public static int deleteFriend(string UserA, string UserB)
         {
             return ifriend.deleteFriend(UserA, UserB);
+        }
+        public static object Getid(string UserA, string UserB)
+        {
+            return ifriend.Getid(UserA, UserB);
         }
     }
 }

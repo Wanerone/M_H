@@ -38,6 +38,9 @@ namespace BLL
         {
             return iartstatic.Getcol(id);
         }
-
+        public static DataTable Readtop(int top)
+        {
+            return iartstatic.ReadTop(top);
+        }
     }
 }

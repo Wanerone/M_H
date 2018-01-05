@@ -20,5 +20,9 @@ namespace IDAL
         DataTable selectKey(int id);
         int GetId();
         string GetEmail(int id);
+        DataTable SelectTop(int top);
+        DataTable SelectLike(string like);
+        int CountLike(string like);
+        int countID(string email);
     }
 }

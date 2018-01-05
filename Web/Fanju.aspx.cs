@@ -27,13 +27,14 @@ namespace Web
                 {
                     HyperLink2.NavigateUrl = "Login.aspx";
                 }
+                BindList1();
+                BindList2();
+                BindList3();
+                BindList4();
+                BindList5();
             }
 
-            BindList1();
-            BindList2();
-            BindList3();
-            BindList4();
-            BindList5();
+            
         }
         //绑定最近更新
         private void BindList1()

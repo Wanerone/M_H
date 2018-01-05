@@ -50,5 +50,9 @@ namespace BLL
         {
             return isarticle.SelectLike(like);
         }
+        public static int countID(string email)
+        {
+            return isarticle.countID(email);
+        }
     }
 }

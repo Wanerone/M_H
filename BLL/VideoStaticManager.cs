@@ -38,5 +38,9 @@ namespace BLL
         {
             return ivideostatic.Getcol(id);
         }
+        public static DataTable Readtop(int top)
+        {
+            return ivideostatic.ReadTop(top);
+        }
     }
 }

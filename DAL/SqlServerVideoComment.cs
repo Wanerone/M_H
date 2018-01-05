@@ -49,7 +49,7 @@ namespace DAL
 
         public DataTable SelectID(int id)
         {
-            string sql = "select a.*,b.userName from VideoComment a, Users b where Vid_id='" + id + "'and a.email=b.email order by ComTime";
+            string sql = "select a.*,b.userName,b.headimg from VideoComment a, UserIn b where Vid_id='" + id + "'and a.email=b.email order by ComTime";
             SqlParameter[] sp = new SqlParameter[]{
                 new SqlParameter("@Vid_id",id)
             };
@@ -67,6 +67,15 @@ namespace DAL
         {
             string sql = "select count(*) from VideoComment";
             return SQLHelper.ExecuteScalar<int>(sql);
+        }
+        public int CountComment(int id)
+        {
+            string sql = "select count(com_id) from VideoComment where Vid_id=@Vid_id";
+            SqlParameter[] sp = new SqlParameter[]
+            {
+                new SqlParameter("@Vid_id", id),
+            };
+            return SQLHelper.ExecuteScalar<int>(sql, sp);
         }
     }
 }

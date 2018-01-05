@@ -18,6 +18,8 @@ namespace Web.NewFolder1
             BindList2();
             BindList3();
             BindList4();
+            BindList5();
+            BindList6();
         }
         private void BindList1()
         {
@@ -30,7 +32,7 @@ namespace Web.NewFolder1
         }
         private void BindList2()
         {
-            DataTable dt = ArticleManager.SelectTop(7);
+            DataTable dt = ArtStaticManager.Readtop(7);
             if (dt != null || dt.Rows.Count != 0)
             {
                 ListView2.DataSource = dt;
@@ -53,6 +55,24 @@ namespace Web.NewFolder1
             {
                 ListView4.DataSource = dt;
                 ListView4.DataBind();
+            }
+        }
+        private void BindList5()
+        {
+            DataTable dt = VideoManager.SelectTop(8);
+            if (dt != null || dt.Rows.Count != 0)
+            {
+                ListView5.DataSource = dt;
+                ListView5.DataBind();
+            }
+        }
+        private void BindList6()
+        {
+            DataTable dt = VideoStaticManager.Readtop(7);
+            if (dt != null || dt.Rows.Count != 0)
+            {
+                ListView6.DataSource = dt;
+                ListView6.DataBind();
             }
         }
     }

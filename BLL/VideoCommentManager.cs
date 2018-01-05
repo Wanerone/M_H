@@ -41,5 +41,9 @@ namespace BLL
         {
             return icomment_video.CountComment();
         }
+        public static int CountComment(int id)
+        {
+            return icomment_video.CountComment(id);
+        }
     }
 }

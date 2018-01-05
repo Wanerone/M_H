@@ -17,5 +17,7 @@ namespace IDAL
         DataTable SelectID(int id);
         int Delete(int id);
         int CountComment();
+        int CountComment(int id);
+
     }
 }

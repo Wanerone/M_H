@@ -17,7 +17,14 @@ namespace DAL
             string sql = "select count(Art_id) from Article ";
             return SQLHelper.ExecuteScalar<int>(sql);
         }
-
+        public int countID(string email)
+        {
+            string sql = "select count(*) from Article where email=@email";
+            SqlParameter[] sp = new SqlParameter[]{
+                new SqlParameter("@email",email),
+            };
+            return SQLHelper.ExecuteScalar<int>(sql,sp);
+        }
         public int Insert(Article art)
         {
             string sql = "insert into Article values(@email,@Art_title,@Art_content,@Art_image,@Art_creatTime,@Art_lable)";

@@ -140,8 +140,135 @@
   <ItemGroup>
     <Content Include="AddArticle.aspx" />
     <Content Include="AddVideo.aspx" />
+    <Content Include="Artimage\A。1.jpg" />
+    <Content Include="Artimage\cd.1.jpg" />
+    <Content Include="Artimage\cd.jpg" />
+    <Content Include="Artimage\cos play.1.jpg" />
+    <Content Include="Artimage\cos play.2.jpg" />
+    <Content Include="Artimage\cos play.3.jpg" />
+    <Content Include="Artimage\M17.1.jpg" />
+    <Content Include="Artimage\M17.2.jpg" />
+    <Content Include="Artimage\M17.3.jpg" />
+    <Content Include="Artimage\M17.4.jpg" />
+    <Content Include="Artimage\M17.5.jpg" />
+    <Content Include="Artimage\剑网.1.jpg" />
+    <Content Include="Artimage\剑网.2.jpg" />
+    <Content Include="Artimage\剑网.3.jpg" />
+    <Content Include="Artimage\剑网.4.jpg" />
+    <Content Include="Artimage\剑网.5.jpg" />
+    <Content Include="Artimage\剑网.6.jpg" />
+    <Content Include="Artimage\剑网.7.jpg" />
+    <Content Include="Artimage\剑网.8.jpg" />
+    <Content Include="Artimage\剑网.9.jpg" />
+    <Content Include="Artimage\十二.1.png" />
+    <Content Include="Artimage\十二.10.png" />
+    <Content Include="Artimage\十二.11.png" />
+    <Content Include="Artimage\十二.12.png" />
+    <Content Include="Artimage\十二.2.png" />
+    <Content Include="Artimage\十二.3.png" />
+    <Content Include="Artimage\十二.4.png" />
+    <Content Include="Artimage\十二.5.png" />
+    <Content Include="Artimage\十二.6.png" />
+    <Content Include="Artimage\十二.7.png" />
+    <Content Include="Artimage\十二.8.png" />
+    <Content Include="Artimage\十二.9.png" />
+    <Content Include="Artimage\吐槽.1.jpg" />
+    <Content Include="Artimage\吐槽.2.jpg" />
+    <Content Include="Artimage\吐槽.3.jpg" />
+    <Content Include="Artimage\哈尔.1.jpg" />
+    <Content Include="Artimage\哈尔.2.jpg" />
+    <Content Include="Artimage\哈尔.3.jpg" />
+    <Content Include="Artimage\夏目.jpg" />
+    <Content Include="Artimage\天空之城.jpg" />
+    <Content Include="Artimage\天行九歌.jpg" />
+    <Content Include="Artimage\安利.1.jpg" />
+    <Content Include="Artimage\安利.2.jpg" />
+    <Content Include="Artimage\安利.3.jpg" />
+    <Content Include="Artimage\安利.4.jpg" />
+    <Content Include="Artimage\宫崎骏.1.jpg" />
+    <Content Include="Artimage\宫崎骏.2.jpg" />
+    <Content Include="Artimage\宫崎骏.3.jpg" />
+    <Content Include="Artimage\宫崎骏.4.jpg" />
+    <Content Include="Artimage\宫崎骏.5.jpg" />
+    <Content Include="Artimage\宫崎骏.6.jpg" />
+    <Content Include="Artimage\宫崎骏.7.jpg" />
+    <Content Include="Artimage\宫崎骏.8.jpg" />
+    <Content Include="Artimage\宫崎骏.9.jpg" />
+    <Content Include="Artimage\小说.1.jpg" />
+    <Content Include="Artimage\小说.2.jpg" />
+    <Content Include="Artimage\小说.3.jpg" />
+    <Content Include="Artimage\小说.4.jpg" />
+    <Content Include="Artimage\我的游戏.1.jpg" />
+    <Content Include="Artimage\我的游戏.2.jpg" />
+    <Content Include="Artimage\扶苏.jpg" />
+    <Content Include="Artimage\曾经年少.jpg" />
+    <Content Include="Artimage\游戏.1.jpg" />
+    <Content Include="Artimage\游戏.2.jpg" />
+    <Content Include="Artimage\游戏.3.jpg" />
+    <Content Include="Artimage\游戏.4.jpg" />
+    <Content Include="Artimage\游戏boss.1.jpg" />
+    <Content Include="Artimage\游戏boss.jpg" />
+    <Content Include="Artimage\理想乡.4.jpg" />
+    <Content Include="Artimage\理想乡.5.jpg" />
+    <Content Include="Artimage\理想乡.6.jpg" />
+    <Content Include="Artimage\番.1.jpg" />
+    <Content Include="Artimage\番.2.jpg" />
+    <Content Include="Artimage\番.3.jpg" />
+    <Content Include="Artimage\番.4.jpg" />
+    <Content Include="Artimage\番剧.1.jpg" />
+    <Content Include="Artimage\番剧.10.jpg" />
+    <Content Include="Artimage\番剧.11.jpg" />
+    <Content Include="Artimage\番剧.2.jpg" />
+    <Content Include="Artimage\番剧.3.jpg" />
+    <Content Include="Artimage\番剧.4.jpg" />
+    <Content Include="Artimage\番剧.5.jpg" />
+    <Content Include="Artimage\番剧.6.jpg" />
+    <Content Include="Artimage\番剧.7.jpg" />
+    <Content Include="Artimage\番剧.8.jpg" />
+    <Content Include="Artimage\番剧.9.jpg" />
+    <Content Include="Artimage\红白机.1.jpg" />
+    <Content Include="Artimage\红白机.10.jpg" />
+    <Content Include="Artimage\红白机.11.jpg" />
+    <Content Include="Artimage\红白机.12.jpg" />
+    <Content Include="Artimage\红白机.13.gif" />
+    <Content Include="Artimage\红白机.14.jpg" />
+    <Content Include="Artimage\红白机.15.jpg" />
+    <Content Include="Artimage\红白机.16.jpg" />
+    <Content Include="Artimage\红白机.17.gif" />
+    <Content Include="Artimage\红白机.18.jpg" />
+    <Content Include="Artimage\红白机.19.jpg" />
+    <Content Include="Artimage\红白机.2.jpg" />
+    <Content Include="Artimage\红白机.20.jpg" />
+    <Content Include="Artimage\红白机.21.jpg" />
+    <Content Include="Artimage\红白机.22.jpg" />
+    <Content Include="Artimage\红白机.23.jpg" />
+    <Content Include="Artimage\红白机.3.gif" />
+    <Content Include="Artimage\红白机.4.jpg" />
+    <Content Include="Artimage\红白机.5.jpg" />
+    <Content Include="Artimage\红白机.6.jpg" />
+    <Content Include="Artimage\红白机.7.gif" />
+    <Content Include="Artimage\红白机.8.jpg" />
+    <Content Include="Artimage\红白机.9.gif" />
+    <Content Include="Artimage\线下活动.1.jpg" />
+    <Content Include="Artimage\线下活动.2.jpg" />
+    <Content Include="Artimage\线下活动.3.jpg" />
+    <Content Include="Artimage\线下活动.4.jpg" />
+    <Content Include="Artimage\阴阳师.1.jpg" />
+    <Content Include="Artimage\阴阳师.2.jpg" />
+    <Content Include="Artimage\阴阳师.3.jpg" />
+    <Content Include="Artimage\阴阳师.4.jpg" />
+    <Content Include="Artimage\阴阳师.5.jpg" />
+    <Content Include="Artimage\阴阳师.6.jpg" />
+    <Content Include="Artimage\音乐.1.jpg" />
+    <Content Include="Artimage\音乐.2.jpg" />
+    <Content Include="Artimage\音乐.3.jpg" />
+    <Content Include="Artimage\音乐.4.jpg" />
+    <Content Include="Artimage\魔都.1.jpg" />
+    <Content Include="Artimage\魔都.2.jpg" />
     <Content Include="css\demo.css" />
+    <Content Include="css\font-awesome.min.css" />
     <Content Include="css\fontawesome.min.css" />
+    <Content Include="css\leftnav.css" />
     <Content Include="css\normalize.css" />
     <Content Include="css\style.css" />
     <Content Include="FanjuAdd.aspx" />
@@ -149,6 +276,7 @@
     <Content Include="FanjuJuchangMore.aspx" />
     <Content Include="FanjuRimanMore.aspx" />
     <Content Include="FanjuZuijinMore.aspx" />
+    <Content Include="GaojianManager.aspx" />
     <Content Include="Image\1px.png" />
     <Content Include="Image\shengdan.jpg" />
     <Content Include="AnimeImage\xiaomai.jpg" />
@@ -185,6 +313,14 @@
     <Content Include="Image\qwe.jpg" />
     <Content Include="Image\S71120.jpg" />
     <Content Include="Image\tubiao.png" />
+    <Content Include="Image\Wake Up,Girls!续篇剧场版.jpg" />
+    <Content Include="Image\京剧猫.jpg" />
+    <Content Include="Image\全职猎人重制版分集剧情介绍（全148集）.jpg" />
+    <Content Include="Image\凉宫春日的消失.jpg" />
+    <Content Include="Image\圣斗士星矢 黄金魂.jpg" />
+    <Content Include="Image\境界.jpg" />
+    <Content Include="Image\境界的彼方.jpg" />
+    <Content Include="Image\太乙仙魔录之灵飞纪.jpg" />
     <Content Include="Image\小埋.jpg" />
     <Content Include="Image\数字1.png" />
     <Content Include="Image\数字2.png" />
@@ -195,6 +331,15 @@
     <Content Include="Image\数字7.png" />
     <Content Include="Image\数字8.png" />
     <Content Include="Image\数字9.png" />
+    <Content Include="Image\海街diary.jpg" />
+    <Content Include="Image\滑头鬼之孙 千年魔京.jpg" />
+    <Content Include="Image\秦时明月之 诸子百家.jpg" />
+    <Content Include="Image\网球王子国语版.jpg" />
+    <Content Include="Image\花与爱丽丝杀人事件.jpg" />
+    <Content Include="Image\苍穹之法芙娜EXODUS 第二季.jpg" />
+    <Content Include="Image\葫芦兄弟动画.jpg" />
+    <Content Include="Image\追逐繁星的孩子.jpg" />
+    <Content Include="Image\银魂剧场版.jpg" />
     <Content Include="InfoSet.aspx" />
     <Content Include="js\diqu.js" />
     <Content Include="js\index.js" />
@@ -212,11 +357,14 @@
     <Content Include="RegisterSucess.aspx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="SearchResult.aspx" />
     <Content Include="StyleSheet1.css" />
     <Content Include="Tubiao\关注1.png" />
     <Content Include="Tubiao\喜欢1.png" />
     <Content Include="Tubiao\喜欢.png" />
     <Content Include="Tubiao\已关注.png" />
+    <Content Include="Tubiao\文章.png" />
+    <Content Include="Tubiao\结果查询.png" />
     <Content Include="Tubiao\搜索.png" />
     <Content Include="Tubiao\搜索1.png" />
     <Content Include="Tubiao\收藏.png" />
@@ -224,6 +372,26 @@
     <Content Include="Tubiao\收藏2 .png" />
     <Content Include="Tubiao\标签.png" />
     <Content Include="Tubiao\观看1.png" />
+    <Content Include="Tubiao\视频.png" />
+    <Content Include="Vdeoimg\1111.jpg" />
+    <Content Include="Vdeoimg\1507432833641.jpg" />
+    <Content Include="Vdeoimg\1507433088224.jpg" />
+    <Content Include="Vdeoimg\4.jpg" />
+    <Content Include="Vdeoimg\90.png" />
+    <Content Include="Vdeoimg\UF.png" />
+    <Content Include="Vdeoimg\下载.png" />
+    <Content Include="Vdeoimg\下载1.png" />
+    <Content Include="Vdeoimg\下载10.png" />
+    <Content Include="Vdeoimg\下载11.png" />
+    <Content Include="Vdeoimg\下载12.png" />
+    <Content Include="Vdeoimg\下载2.png" />
+    <Content Include="Vdeoimg\下载3.png" />
+    <Content Include="Vdeoimg\下载4.png" />
+    <Content Include="Vdeoimg\下载5.png" />
+    <Content Include="Vdeoimg\下载6.png" />
+    <Content Include="Vdeoimg\下载7.png" />
+    <Content Include="Vdeoimg\下载8.png" />
+    <Content Include="Vdeoimg\下载9.png" />
     <Content Include="VideoDisplay.aspx" />
     <Content Include="WebF.aspx" />
     <Content Include="bootstrap-3.3.7-dist\css\bootstrap-theme.css.map" />
@@ -246,6 +414,7 @@
     <Content Include="LoginRegister.Master" />
     <Content Include="Gaojian.master" />
     <Content Include="Nav.Master" />
+    <Content Include="Image\洛洛历险记jpg" />
     <None Include="scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="scripts\jquery-3.2.1.js" />
     <Content Include="scripts\jquery-3.2.1.min.js" />
@@ -356,6 +525,13 @@
     <Compile Include="Gaojian.master.designer.cs">
       <DependentUpon>Gaojian.master</DependentUpon>
     </Compile>
+    <Compile Include="GaojianManager.aspx.cs">
+      <DependentUpon>GaojianManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GaojianManager.aspx.designer.cs">
+      <DependentUpon>GaojianManager.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GeRenZhuYe.aspx.cs">
       <DependentUpon>GeRenZhuYe.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -440,6 +616,13 @@
     </Compile>
     <Compile Include="RegisterSucess.aspx.designer.cs">
       <DependentUpon>RegisterSucess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchResult.aspx.cs">
+      <DependentUpon>SearchResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchResult.aspx.designer.cs">
+      <DependentUpon>SearchResult.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserCenter.master.cs">
       <DependentUpon>UserCenter.master</DependentUpon>
@@ -534,11 +717,9 @@
   <ItemGroup>
     <Folder Include="angular\" />
     <Folder Include="App_Data\" />
-    <Folder Include="Artimage\" />
     <Folder Include="ckeditor\" />
     <Folder Include="ckfinder\" />
     <Folder Include="fonts\" />
-    <Folder Include="VideoImg\" />
     <Folder Include="Video\" />
   </ItemGroup>
   <ItemGroup>

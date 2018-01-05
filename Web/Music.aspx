@@ -1,12 +1,21 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Nav.Master" AutoEventWireup="true" CodeBehind="Music.aspx.cs" Inherits="Web.Music" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+     <div>
+            <ul class="nav navbar-nav navbar-right" > 
+                <li style="color:lightpink;">
+                    <asp:HyperLink ID="HyperLink2" runat="server" BackColor="#3DC7BE">请登录</asp:HyperLink>
+                </li> 
+                <li >
+                    <asp:HyperLink ID="HyperLink1" runat="server" Visible="False"></asp:HyperLink></li> 
+            </ul> 
+                </div> 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="css/font-awesome.min.css" rel="stylesheet" />
     <style>
         .search1{
             width: 40%;
-            margin: 0 auto;
+            margin: 40px auto;
         }
         .inputt {
           width: 90%;
@@ -35,20 +44,203 @@
           font-size: 16px;
           color: #F9F0DA;
         }
+         .content{
+            width:100%;
+            padding-top:30px;
+            margin-bottom:30px;
+            
+        }
+        .trsty{
+            margin:15px 10px;
+             height:300px;
+             overflow:hidden;
+        }
+        .tdsty{
+            margin:15px 10px;
+            width:97%;
+            border:1px solid #404969;
+            box-shadow: 0 0 7px rgba(0, 0, 0, .37);
+            overflow:hidden;
+        }
+        .tu{
+            width:27%;
+            float:left;
+             overflow:hidden;
+        }
+        .tutu {
+            width: 184px;
+            height: 269px;
+            overflow:hidden;
+        }
+        .neirong{
+            width:70%;
+            float:left;
+        }
+        .nei{
+            width:100%;
+            height:30px;
+        }
+        .nei a{
+            text-decoration: none;
+            color:#90A4AE;
+        }
+        .nei1 a{
+            font-size:xx-large;
+            color:#393E46;
+            text-decoration:none;
+        }
+        .nei1 a:hover{
+            color:#0881A3;
+        }
+        .nei2{
+            width:100%;
+            height:100px;
+            overflow:hidden;
+        }
+        .nei2 a {
+            color:#90A4AE;
+            text-decoration: none;
+        }
+        .nei3{
+            width:100%;
+            height:20px;
+        }
+        .list-tu{
+            float:left;
+            width:30%;
+                line-height: 21px;
+             white-space: nowrap;
+        }
+        .list-tu img{
+            vertical-align: top;
+            margin-right: 5px;
+        }
+        .datapager{
+            padding-top:40px;
+            width:100%;
+        }
+          pager
+         {
+         margin:0 100px;
+         display:block;
+         padding: 5px 0;
+         margin: 10px 0 10px 0;
+          }
+         .pager a, .pager span
+         {       
+        font-size:larger;
+         border: 1px solid #E6E7E1;
+         line-height: 20px;
+         margin-right: 5px;
+         padding: 0 6px;
+         color: #0046D5;
+          }
+         .pager a:hover
+          {
+         text-decoration: none;
+         border-color: #0046D5;
+         }
+         .pager .current
+         {
+         background-color: #0046D5;
+         border-color: #0046D5;
+        color: #fff;
+         font-weight: bold;
+         }
+         .pager .total, .pager .total strong
+         {
+         color: Gray;
+         padding: 0 3px;
+        }
+         .clear{
+             clear:both;
+         }
+          .tuijian{
+            height:340px;
+            border:1px solid ;
+            margin-top:5px;
+            border-style:none;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .ziti{
+            width:200px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            color:#140303;
+            opacity:1.0;
+        }
+        .ziti2{
+            width:300px;
+        }
+
+        .tuijian a{
+            transition: 0.3s;
+            text-decoration:none;
+            color:#140303;
+            font-size:20px;
+        }
+        .tuitui img{
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .tuitui img:hover{
+            opacity: 0.7;
+        }
+        .tuijian a:hover{
+            color:#00B8C0;
+        }
+          .bantou-paihang{
+      
+        }
+        .bantou a{
+            color:#2C2E3E;
+            height:33px;
+            text-decoration:none;
+        }
+        .bantou a:hover{
+            color:#00B8C0;
+        }
+        .tubiao{
+            float:left;
+            height:340px;
+            width:10%;
+        }
+        .tubiao tr{
+            height: 40px;
+        }
+        .tubiao img{
+            width:84%;
+            height:25px;
+        }
+        .paihang{
+            text-align:left!important;
+            float:left;
+            width:90%;
+            height:340px;
+        }
+        .tuiji {
+            height: 430px;
+        }
     </style>
     <script type="text/javascript">
        
         function Clear() {
-            document.getElementById("<%=txtKeyword.ClientID%>").value = "";
+            if (document.getElementById("<%=txtKeyword.ClientID%>").value == "看你所看..") {
+                document.getElementById("<%=txtKeyword.ClientID%>").value = "";
+            }
+            
         }
         function Get() {
-            document.getElementById("<%=txtKeyword.ClientID%>").value = "看你所看..";
+            if (document.getElementById("<%=txtKeyword.ClientID%>").value == "") {
+                document.getElementById("<%=txtKeyword.ClientID%>").value = "看你所看..";
+            }
         }
-
     </script>
     <div class="search1">
             <asp:TextBox ID="txtKeyword" runat="server" CssClass="inputt" Text="看你所看.." onclick="Clear();" onblur="Get();" ></asp:TextBox>
-	        <asp:ImageButton ID="ImageButton1" runat="server" CssClass="buttonn" ImageUrl="~/Tubiao/搜索.png" />
+	        <asp:ImageButton ID="ImageButton1" runat="server" CssClass="buttonn" ImageUrl="~/Tubiao/搜索.png" OnClick="ImageButton1_Click" />
     </div>
     <div class="content">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
@@ -68,15 +260,17 @@
                     </GroupTemplate>
                     <ItemTemplate>
                         <td class="tdsty">
-                            <div class="tu"><a  href="<%# "VideoDisplay.aspx?id="+ Eval("Vid_id") %>">
-                           <img  src="<%# Eval("anime_Image")%>" class=" img-rounded" width="184"  height="269"/>
+                            <div class="tu">
+                                <div class="tutu"><a  href="<%# "VideoDisplay.aspx?id="+ Eval("Vid_id") %>">
+                           <img  src="<%# Eval("Vid_img")%>" class=" img-rounded" />
                                </a></div>
+                            </div>
                             <div class="neirong">
-                                <div class="nei1"><a   href="<%# "FanjuDisplay.aspx?id="+ Eval("anime_ID") %>"><%#Eval("anime_Name") %></a></div>
-                                <div class="nei"><a>地区：</a><%#Eval("location") %></div>
-                                <div class="nei"><a>年代：</a><%#Eval("addtime") %></div>
-                                <div class="nei"><a>标签：</a><%#Eval("label") %></div>
-                                <div class="nei2"><a>简介：</a><%#Eval("jianjie") %></div>
+                                <div class="nei1"><a   href="<%# "VideoDisplay.aspx?id="+ Eval("Vid_id") %>"><%#Eval("Vid_title") %></a></div>
+                                <div class="nei"><a>作者：</a><%#Eval("userName") %></div>
+                                <div class="nei"><a>上传时间：</a><%#Eval("Vid_creattime") %></div>
+                                <div class="nei"><a>类别：</a><%#Eval("Vid_category") %></div>
+                                <div class="nei2"><a>简介：</a><%#Eval("Vid_jianjie") %></div>
                                 <div class="nei3">
                                     <div class="list-tu"><img src="Tubiao/观看1.png" width="20" height="20"/><span><%#Eval("readCount") %></span></div>
                                     <div class="list-tu"><img src="Tubiao/收藏2 .png" width="20" height="20" /><span><%#Eval("collection") %></span></div>
@@ -154,7 +348,7 @@
                     </GroupTemplate>
                     <ItemTemplate>
                         <td >
-                   <div class="ziti ziti2" style="padding: 6px; text-align:left;"> <a href="<%# "FanjuDisplay.aspx?id="+ Eval("anime_ID") %>" style="font-size:20px;" > <%#Eval("anime_Name") %></a>
+                   <div class="ziti ziti2" style="padding: 6px; text-align:left;"> <a href="<%# "VideoDisplay.aspx?id="+ Eval("Vid_id") %>" style="font-size:20px;" > <%#Eval("Vid_title") %></a>
                       </div>
                             </td>
                     </ItemTemplate>

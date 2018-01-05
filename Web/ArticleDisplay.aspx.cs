@@ -10,16 +10,12 @@ namespace Web
 {
     public partial class ArticleDisplay : System.Web.UI.Page
     {
-        public string ArtEmail;
-        public int num;
-        public string email;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
 
                 ViewState["Art_id"] =  Convert.ToInt32(Request.QueryString["id"]);
-                ArtEmail = ArticleManager.GetEmail((int)ViewState["Art_id"]);//根据文章Id找到作者email
                 Session["ArtEmail"]= ArticleManager.GetEmail((int)ViewState["Art_id"]);//根据文章Id找到作者email
                 if (Session["Name"] != null && Session["Email"] != null)
                 {
@@ -28,9 +24,7 @@ namespace Web
                     HyperLink1.Visible = true;
                     HyperLink1.Text = "退出";
                     HyperLink1.NavigateUrl = "~/WebT.aspx";
-                    email = UsersManager.SelectEmail(Session["Name"].ToString());
-                  // Session["Eemail"]= UsersManager.SelectEmail(Session["Name"].ToString());
-                    if (FriendManager.GetUserB(email)==ArtEmail)
+                    if (FriendManager.Getid(Session["Email"].ToString(), Session["ArtEmail"].ToString())!=null)
                     {
                         ImageButton2.ImageUrl = "Tubiao/已关注.png";
                     }
@@ -60,36 +54,33 @@ namespace Web
                     ImageButton1.ImageUrl = "Tubiao/收藏.png";
                     HyperLink2.NavigateUrl = "Login.aspx";
                 }
-                //Session["Email"] = "12@qq.com";
+
                 Bing();
                 Bind2();
-                BindList2();
+                BindList4();
                 BindList3();
-                //ArtEmail = ArticleManager.GetEmail((int)ViewState["Art_id"]);//根据文章Id找到作者email
+
 
                 if (ArtStaticManager.addRead((int)ViewState["Art_id"]) == 1)//如果更新阅读次数成功
                 {
                     BindReadCount();
                 }
-              
-                Label5.Text =" 收藏";
-                Label6.Text = "评论数";
-             
+
+                Label5.Text = ArtStaticManager.Getcol((int)ViewState["Art_id"]).ToString() + "收藏";
+                Label6.Text =ArticleCommentManager.CountComment((int)ViewState["Art_id"]).ToString()+ "评论";
+                Label8.Text = ArticleCommentManager.CountComment((int)ViewState["Art_id"]).ToString();
+                Label9.Text = ArticleManager.countID(Session["ArtEmail"].ToString()).ToString();
+                Label12.Text = FriendManager.count(Session["ArtEmail"].ToString()).ToString();
+
             }
-           // Label9.Text= ArtStaticManager.Getcol(17).ToString();
-           // ArtEmail = ArticleManager.GetEmail((int)ViewState["Art_id"]);//根据文章Id找到作者email
-          //  Bind2();
             RepeaterBind1();
-           // BindList2();
-           // BindList3();
-            num = ArtStaticManager.Getcol((int)ViewState["Art_id"]);
             Label10.Text = ArtStaticManager.Getcol((int)ViewState["Art_id"]).ToString();
         }
 
         //用户头像
         protected void Bind2()
         {
-            if (email != null)
+            if (Session["Email"] != null)
             {
                 DataTable dt = UserInManager.SelectID(Session["Email"].ToString());
             if (dt != null && dt.Rows.Count == 1)
@@ -114,23 +105,18 @@ namespace Web
             }
         }
         //文章作者信息
-        private void BindList2()
+        private void BindList4()
         {
-            /*  if (Session["Email"] != null)
-              {
-                  DataTable dt = UserInManager.SelectID(Session["Email"].ToString());
-                  if (dt != null || dt.Rows.Count != 0)
-                  {
-                      ListView1.DataSource = dt;
-                      ListView1.DataBind();
-                  }
-              }*/
-            DataTable dt = UserInManager.SelectID(Session["ArtEmail"].ToString());
-            if (dt != null || dt.Rows.Count != 0)
+            if (Session["ArtEmail"] != null)
             {
-                ListView2.DataSource = dt;
-                ListView2.DataBind();
+                    DataTable dt = UserInManager.SelectID(Session["ArtEmail"].ToString());
+                    if (dt != null || dt.Rows.Count != 0)
+                    {
+                        ListView4.DataSource = dt;
+                        ListView4.DataBind();
+                    }
             }
+                
         }
        // 文章作者其他文章
         private void BindList3()
@@ -144,7 +130,7 @@ namespace Web
                       ListView1.DataBind();
                   }
               }*/
-            DataTable dt = ArticleManager.SelectAll(ArtEmail);
+            DataTable dt = ArticleManager.SelectAll(Session["ArtEmail"].ToString());
             if (dt != null || dt.Rows.Count != 0)
             {
                 ListView3.DataSource = dt;
@@ -210,19 +196,7 @@ namespace Web
              pl.Visible = !pl.Visible;
            // RepeaterBind1();
         }
-        //弹出回复框
-        protected void LinkButton2_Click(object sender, EventArgs e)
-        {
-            LinkButton bt = (LinkButton)sender;
-            Control re = bt.Parent;
-            Panel pl = (bt.Parent.Parent.FindControl("Panel1") as Panel);
-            if (pl!=null)
-            {
-                pl.Visible = !pl.Visible;
-            }
-           
-            // RepeaterBind1();
-        }
+     
         //绑定显示评论
         private void RepeaterBind1()
         {
@@ -289,9 +263,8 @@ namespace Web
                     {
                         if (ArtStaticManager.RedColl((int)ViewState["Art_id"]) == 1&&ArtCollectionManager.UpdateFalse(Session["Email"].ToString(),(int)ViewState["Art_id"])==1)
                         {
-                            num = num - 1;
-                            Label10.Text = num.ToString();
-                        }
+                        Label10.Text = (Convert.ToInt32(Label10.Text) - 1).ToString();
+                    }
                         ImageButton1.ImageUrl = "Tubiao/收藏.png";
                     }
                     else
@@ -299,7 +272,7 @@ namespace Web
                         if (ArtCollectionManager.GetState(Session["Email"].ToString(), (int)ViewState["Art_id"]) == null)
                         {
                             ArtCollection art = new ArtCollection();
-                            art.email = Session["Eemail"].ToString();
+                            art.email = Session["Email"].ToString();
                             art.Art_id = (int)ViewState["Art_id"];
                             art.colState = "N";
                             if (ArtCollectionManager.add(art)==1)
@@ -307,9 +280,8 @@ namespace Web
                                 ImageButton1.ImageUrl = "Tubiao/收藏1.png";
                                 if (ArtStaticManager.addColl((int)ViewState["Art_id"]) == 1 )
                                 {
-                                    num = num + 1;
-                                    Label10.Text = num.ToString();
-                                }
+                                Label10.Text = (Convert.ToInt32(Label10.Text) +1).ToString();
+                                 }
                             }
                         }
                         else
@@ -317,9 +289,8 @@ namespace Web
                             ImageButton1.ImageUrl = "Tubiao/收藏1.png";
                             if (ArtStaticManager.addColl((int)ViewState["Art_id"]) == 1 && ArtCollectionManager.UpdateTrue(Session["Email"].ToString(), (int)ViewState["Art_id"]) == 1)
                             {
-                                num = num + 1;
-                                Label10.Text = num.ToString();
-                            }
+                            Label10.Text = (Convert.ToInt32(Label10.Text) +1).ToString();
+                        }
                         }  
                         
                     }

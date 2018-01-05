@@ -29,10 +29,13 @@ namespace DAL
             };
             return SQLHelper.ExecuteScalar<string>(sql, sp);
         }
-        public int count()
+        public int count(string UserB)
         {
-            string sql = "select count(*) from Friend ";
-            return SQLHelper.ExecuteScalar<int>(sql);
+            string sql = "select count(UserA) from Friend where UserB=@UserB ";
+            SqlParameter[] sp = new SqlParameter[]{
+                new SqlParameter("@UserB",UserB),
+            };
+            return SQLHelper.ExecuteScalar<int>(sql,sp);
         }
         public int deleteFriend(string UserA,string UserB)
         {
@@ -42,6 +45,15 @@ namespace DAL
                 new SqlParameter("@UserB",UserB),
             };
             return SQLHelper.GetExcuteNonQuery(sql, sp);
+        }
+        public object Getid(string UserA, string UserB)
+        {
+            string sql = "select friend_id from Friend where UserA=@UserA and UserB=@UserB";
+            SqlParameter[] sp = new SqlParameter[]{
+                new SqlParameter("@UserA",UserA),
+                new SqlParameter("@UserB",UserB),
+            };
+            return SQLHelper.ExecuteScalar<object>(sql, sp);
         }
    
     }
